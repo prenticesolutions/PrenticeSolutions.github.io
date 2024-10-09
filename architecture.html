@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture Overview</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Architecture Overview</h1>
+
+        <p>This page provides an overview of the architecture for the Kubernetes-based network monitoring system. Below is a flowchart that shows how the different components (Pods, services, Prometheus, Grafana, NGINX) interact with each other.</p>
+
+        <h2>Diagram of Data Flow</h2>
+        <p>The diagram below represents the data flow from the monitoring pod to Prometheus, which collects network traffic metrics. Grafana visualizes the data, while NGINX secures access to the system.</p>
+
+        <img src="./images/diagram.png" alt="Architecture Diagram of Kubernetes Cluster">
+
+        <h2>Component Breakdown</h2>
+        <ul>
+            <li><strong>Monitoring Pod:</strong> Captures network traffic using <code>tcpdump</code>. It then sends the data to Prometheus for metrics collection.</li>
+            <li><strong>Prometheus:</strong> Scrapes metrics from the monitoring pod and stores it for future queries.</li>
+            <li><strong>Grafana:</strong> Visualizes the metrics stored in Prometheus, allowing for real-time data visualization and analysis.</li>
+            <li><strong>NGINX Reverse Proxy:</strong> Secures remote access to the system, ensuring that users can only interact with the Kubernetes cluster through a secure entry point.</li>
+            <li><strong>Persistent Volume:</strong> Used to store the network traffic data for later backup and analysis.</li>
+            <li><strong>Traffic Backup Pod:</strong> Backs up network traffic data from the persistent volume.</li>
+        </ul>
+
+        <h2>Network Security</h2>
+        <p>The <strong>NGINX reverse proxy</strong> is a critical part of the architecture, as it secures access to the network. All incoming traffic must pass through the reverse proxy, which ensures that only authorized users can access the Kubernetes Dashboard, Grafana, and other services.</p>
+
+        <h2>Data Flow Explained</h2>
+        <p>Here’s a step-by-step flow of data within the system:</p>
+        <ol>
+            <li>Network traffic is captured by the <strong>Monitoring Pod</strong> using <code>tcpdump</code>.</li>
+            <li>Metrics about this traffic are scraped by <strong>Prometheus</strong>.</li>
+            <li>The metrics are visualized in real-time using <strong>Grafana</strong>.</li>
+            <li>The <strong>Persistent Volume</strong> stores network traffic data for backup and analysis.</li>
+            <li>The <strong>Traffic Backup Pod</strong> ensures that network traffic data is regularly backed up to avoid data loss.</li>
+            <li><strong>NGINX Reverse Proxy</strong> ensures that the entire system is secured, and only authorized users can access the system from the outside.</li>
+        </ol>
+
+    </div>
+</body>
+</html>
