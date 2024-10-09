@@ -15,28 +15,14 @@ spec:
         app: nginx-reverse-proxy
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
-        ports:
-        - containerPort: 8080  # NGINX listens on this port
-        volumeMounts:
-        - name: nginx-config
-          mountPath: /etc/nginx/nginx.conf
-          subPath: nginx.conf  # Mount the config file
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /etc/nginx/nginx.conf
+              name: config-volume
       volumes:
-      - name: nginx-config
-        configMap:
-          name: nginx-config
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: nginx-reverse-proxy
-spec:
-  type: NodePort  # Expose the service on a high port
-  selector:
-    app: nginx-reverse-proxy
-  ports:
-  - port: 8080
-    targetPort: 8080
-    nodePort: 30080  # Change to an available NodePort (this can be customized)
+        - name: config-volume
+          configMap:
+            name: nginx-config

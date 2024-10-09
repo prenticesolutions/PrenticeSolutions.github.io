@@ -4,5 +4,5 @@ metadata:
   name: prenticeops
   namespace: kubernetes-dashboard
   annotations:
-    kubernetes.io/service-account.name: "prenticeops"
+    kubernetes.io/service-account.name: prenticeops
 type: kubernetes.io/service-account-token

@@ -11,7 +11,7 @@ data:
         listen 8080;
 
         location /kube-dashboard/ {
-          proxy_pass https://kubernetes-dashboard.kubernetes-dashboard.svc.cluster.local:443/;  # Forward to Kubernetes Dashboard within the cluster
+          proxy_pass https://kubernetes-dashboard.kubernetes-dashboard.svc.cluster.local:443/;
           proxy_set_header Host $host;
           proxy_set_header X-Real-IP $remote_addr;
           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -19,7 +19,7 @@ data:
         }
 
         location /grafana/ {
-          proxy_pass http://grafana.default.svc.cluster.local:80/;  # Forward to Grafana within the cluster
+          proxy_pass http://grafana.default.svc.cluster.local:80/;
           proxy_set_header Host $host;
           proxy_set_header X-Real-IP $remote_addr;
           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

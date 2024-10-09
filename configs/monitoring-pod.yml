@@ -6,16 +6,16 @@ metadata:
     app: prometheus
 spec:
   containers:
-  - name: prometheus
-    image: prom/prometheus
-    ports:
-    - containerPort: 9090
-    args:
-    - "--config.file=/etc/prometheus/prometheus.yml"
-    volumeMounts:
-    - mountPath: /etc/prometheus/
-      name: config-volume
+    - name: prometheus
+      image: prom/prometheus
+      ports:
+        - containerPort: 9090
+      args:
+        - --config.file=/etc/prometheus/prometheus.yml
+      volumeMounts:
+        - mountPath: /etc/prometheus/
+          name: config-volume
   volumes:
-  - name: config-volume
-    configMap:
-      name: prometheus-config
+    - name: config-volume
+      configMap:
+        name: prometheus-config
