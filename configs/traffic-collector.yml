@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: traffic-collector
+  labels:
+    app: traffic-collector
+spec:
+  hostNetwork: true  #Enables host networking for the pod
+  containers:
+  - name: collector
+    image: corfr/tcpdump
+    command: ["tcpdump", "-i", "eth0", "-w", "/mnt/data/traffic.pcap"]  #Ensure eth0 is correct interface for your host
+    volumeMounts:
+    - mountPath: /mnt/data
+      name: backup-storage
+
+  - name: prometheus-exporter
+    image: prom/node-exporter
+    ports:
+    - containerPort: 9090
+    args:
+    - "--path.procfs=/proc"
+    - "--path.sysfs=/sys"
+    - "--web.listen-address=:9090"
+
+  volumes:
+  - name: backup-storage
+    persistentVolumeClaim:
+      claimName: backup-pvc

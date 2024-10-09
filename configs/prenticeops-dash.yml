@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: prenticeops
+  namespace: kubernetes-dashboard
+  annotations:
+    kubernetes.io/service-account.name: "prenticeops"
+type: kubernetes.io/service-account-token
