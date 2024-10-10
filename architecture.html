@@ -5,6 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Architecture Overview</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Refined Navigation Bar Styles */
+        nav {
+            background-color: #333;
+            padding: 5px 0; /* Reduced padding */
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px; /* Reduced space between links */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #00aaff;
+            font-size: 0.9em; /* Reduced font size */
+            padding: 3px 8px; /* Smaller padding for links */
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+            color: white;
+            border-radius: 3px;
+        }
+
+        /* Make sure the navigation bar spans the full width */
+        nav {
+            width: 100%;
+            position: fixed; /* Keep the navbar at the top when scrolling */
+            top: 0;
+            left: 0;
+        }
+
+        /* Adjust the content to avoid being hidden under the nav bar */
+        .container {
+            margin-top: 50px; /* Adjust this value based on the height of your navbar */
+        }
+    </style>
 </head>
 <body>
     <div class="container">
