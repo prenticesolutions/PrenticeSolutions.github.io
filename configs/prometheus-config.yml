@@ -10,8 +10,8 @@ data:
     scrape_configs:
       - job_name: 'traffic-collector'
         static_configs:
-          - targets: ['traffic-collector:9090']
+          - targets: ['POD_NAME:9090']
 
-      - job_name: 'traffic-backup'
+      - job_name: 'backup'
         static_configs:
-          - targets: ['traffic-backup:9090']
+          - targets: ['POD_NAME:9090']
