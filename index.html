@@ -6,7 +6,7 @@
     <title>Home Kubernetes Cluster for Network Monitoring and Automation</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to your stylesheet -->
     <style>
-        /* Navigation Bar Styles */
+        /* Refined Navigation Bar Styles */
         nav {
             background-color: #333;
             padding: 10px 0;
@@ -21,20 +21,34 @@
 
         nav ul li {
             display: inline;
-            margin-right: 20px;
+            margin-right: 15px;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #00aaff;
-            font-size: 1.2em;
-            padding: 10px 15px;
+            font-size: 1em;
+            padding: 5px 10px;
+            transition: background-color 0.3s ease;
         }
 
         nav ul li a:hover {
-            background-color: #00aaff;
+            background-color: #555;
             color: white;
-            border-radius: 5px;
+            border-radius: 3px;
+        }
+
+        /* Make sure the navigation bar spans the full width */
+        nav {
+            width: 100%;
+            position: fixed; /* Optional: Keep the navbar at the top when scrolling */
+            top: 0;
+            left: 0;
+        }
+
+        /* Adjust the content to avoid being hidden under the nav bar */
+        .container {
+            margin-top: 60px; /* Adjust this value based on the height of your navbar */
         }
     </style>
 </head>
@@ -111,14 +125,14 @@
         </ul>
 
         <h2>Project Architecture</h2>
-        <p><img src="./images/diagram.png" alt="Project Architecture"> <!-- You can upload an image in the repo for this --></p>
+        <p><img src="./images/diagram.png" alt="Project Architecture"></p>
         <p><a href="architecture.html">View Full Architecture Overview</a></p>
    
         <h2>Setup Guide</h2>
         <p>To set up the cluster, follow the <a href="./setup.html">Setup Guide</a>.</p>
 
         <h2>Screenshots</h2>
-        <p><img src="./images/grafana-dashboard.png" alt="Grafana Dashboard"> <!-- Add a Grafana screenshot for demo purposes --></p>
+        <p><img src="./images/grafana-dashboard.png" alt="Grafana Dashboard"></p>
 
         <h2>Future Enhancements</h2>
         <p>Jenkins CI/CD pipeline for automated configuration updates.</p>
