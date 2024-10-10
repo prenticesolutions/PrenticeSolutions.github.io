@@ -23,6 +23,7 @@
             <li><strong>Traffic-Collector Pod:</strong> Collects the network traffic and sends it to a Prometheus exporter for monitoring.</li>
             <li><strong>Traffic-Backup Pod:</strong> Backs up network traffic and is also monitored by its own Prometheus exporter.</li>
             <li><strong>Monitoring Pod (Prometheus):</strong> Hosts Prometheus, which scrapes metrics from the Prometheus exporters on both the traffic-collector and traffic-backup pods.</li>
+            <li><strong>Kubernetes Dashboard Pod:</strong> Provides a UI for managing and monitoring the Kubernetes cluster. This is accessed through the NGINX reverse proxy for security.</li>
             <li><strong>Prometheus Exporters:</strong> Export metrics from both the traffic-collector and traffic-backup pods to Prometheus.</li>
             <li><strong>Prometheus:</strong> Scrapes metrics from both exporters and stores them for analysis and visualization.</li>
             <li><strong>Grafana:</strong> Visualizes the data collected by Prometheus in a user-friendly dashboard.</li>
@@ -40,6 +41,7 @@
             <li>These metrics are scraped by <strong>Prometheus</strong>.</li>
             <li>The metrics are visualized in real-time using <strong>Grafana</strong>.</li>
             <li>The <strong>Traffic Backup Pod</strong> ensures that network traffic data is regularly backed up to avoid data loss.</li>
+            <li>The <strong>Kubernetes Dashboard Pod</strong> provides a UI to manage the cluster, accessible via the NGINX reverse proxy.</li>
             <li><strong>NGINX Reverse Proxy</strong> ensures that the entire system is secured, and only authorized users can access the system from the outside.</li>
         </ol>
 
