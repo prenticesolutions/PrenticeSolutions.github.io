@@ -8,13 +8,13 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
     margin: 20px;
 }
 
 h1, h2 {
-    color: #0056b3;
+    color: #00aaff; /* Bright blue for headings */
     margin-bottom: 10px;
 }
 
@@ -33,7 +33,7 @@ p {
 }
 
 a {
-    color: #007bff;
+    color: #00aaff; /* Bright blue for links */
     text-decoration: none;
 }
 
@@ -48,21 +48,22 @@ ul {
 }
 
 ul li {
-    background: #fff;
+    background: #1e1e1e; /* Dark background for list items */
     margin-bottom: 10px;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 ul li:hover {
-    background: #e9ecef;
+    background: #333333; /* Lighter dark on hover */
 }
 
 code {
-    background-color: #f1f1f1;
+    background-color: #2e2e2e; /* Dark background for code blocks */
     padding: 2px 4px;
     border-radius: 4px;
+    color: #e0e0e0; /* Light text in code blocks */
 }
 
 /* Images */
@@ -71,12 +72,12 @@ img {
     height: auto;
     border-radius: 10px;
     margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
 }
 
 /* Setup Guide Link */
 a:link, a:visited {
-    background-color: #007bff;
+    background-color: #00aaff; /* Bright blue for buttons */
     color: white;
     padding: 10px 15px;
     text-align: center;
@@ -86,7 +87,7 @@ a:link, a:visited {
 }
 
 a:hover, a:active {
-    background-color: #0056b3;
+    background-color: #0077cc; /* Slightly darker on hover */
 }
 
 /* Container */
@@ -94,9 +95,9 @@ a:hover, a:active {
     max-width: 900px;
     margin: auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #1e1e1e; /* Dark background for container */
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 
 /* Future Enhancements Section */
@@ -105,6 +106,6 @@ h2:after {
     display: block;
     width: 100px;
     height: 4px;
-    background: #0056b3;
+    background: #00aaff; /* Blue underline for section headers */
     margin-top: 8px;
 }
