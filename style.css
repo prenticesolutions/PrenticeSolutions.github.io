@@ -8,7 +8,7 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #121212; /* Dark background */
+    background-color: #121212; /* Dark background for body */
     color: #e0e0e0; /* Light text color */
     margin: 20px;
 }
@@ -48,11 +48,11 @@ ul {
 }
 
 ul li {
-    background: #1e1e1e; /* Dark background for list items */
+    background: #2b2b2b; /* Darker background for list items */
     margin-bottom: 10px;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Darker shadow */
 }
 
 ul li:hover {
@@ -72,7 +72,7 @@ img {
     height: auto;
     border-radius: 10px;
     margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow for images */
 }
 
 /* Setup Guide Link */
@@ -95,9 +95,9 @@ a:hover, a:active {
     max-width: 900px;
     margin: auto;
     padding: 20px;
-    background-color: #1e1e1e; /* Dark background for container */
+    background-color: #1b1b1b; /* Darker container background */
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6); /* Darker shadow for container */
 }
 
 /* Future Enhancements Section */
