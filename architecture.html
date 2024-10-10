@@ -36,12 +36,12 @@
         <h2>Data Flow Explained</h2>
         <p>Here’s a step-by-step flow of data within the system:</p>
         <ol>
-            <li>Network traffic is captured by the <strong>Traffic-Collector Pod</strong>.</li>
+            <li><strong>Network traffic</strong> is captured by the <strong>Traffic-Collector Pod</strong>.</li>
             <li>The <strong>Prometheus Exporter</strong> collects metrics from the traffic-collector and traffic-backup pods.</li>
             <li>These metrics are scraped by <strong>Prometheus</strong>.</li>
             <li>The metrics are visualized in real-time using <strong>Grafana</strong>.</li>
             <li>The <strong>Traffic Backup Pod</strong> ensures that network traffic data is regularly backed up to avoid data loss.</li>
-            <li>The <strong>Kubernetes Dashboard Pod</strong> provides a UI to manage the cluster, accessible via the NGINX reverse proxy.</li>
+            <li>The <strong>Kubernetes Dashboard Pod</strong> provides a UI to manage the cluster, accessible via the <strong>NGINX Reverse Proxy</strong>.</li>
             <li><strong>NGINX Reverse Proxy</strong> ensures that the entire system is secured, and only authorized users can access the system from the outside.</li>
         </ol>
 
