@@ -37,7 +37,7 @@
         <script>
             var ctx = document.getElementById('roadmapChart').getContext('2d');
             var roadmapChart = new Chart(ctx, {
-                type: 'horizontalBar',
+                type: 'bar',  // Use 'bar' chart with horizontal orientation
                 data: {
                     labels: [
                         'Phase 1: Alerting & sFlow (30 Days)', 
@@ -64,34 +64,37 @@
                     }]
                 },
                 options: {
+                    indexAxis: 'y',  // Set horizontal orientation for the bar chart
                     scales: {
-                        xAxes: [{
+                        x: {  // Updated xAxes to x (Chart.js 3 syntax)
+                            beginAtZero: true,
                             ticks: {
-                                beginAtZero: true,
                                 fontColor: '#e0e0e0' /* Light text for axes */
                             },
-                            scaleLabel: {
+                            title: {
                                 display: true,
-                                labelString: 'Days to Completion',
+                                text: 'Days to Completion',
                                 fontColor: '#e0e0e0' /* Light text for labels */
                             }
-                        }],
-                        yAxes: [{
+                        },
+                        y: {  // Updated yAxes to y (Chart.js 3 syntax)
                             ticks: {
                                 fontColor: '#e0e0e0' /* Light text for labels */
                             },
-                            scaleLabel: {
+                            title: {
                                 display: true,
-                                labelString: 'Phases',
+                                text: 'Phases',
                                 fontColor: '#e0e0e0' /* Light text for labels */
                             }
-                        }]
+                        }
                     },
                     responsive: true,
                     maintainAspectRatio: false,
-                    legend: {
-                        labels: {
-                            fontColor: '#e0e0e0' /* Light text for the legend */
+                    plugins: {
+                        legend: {
+                            labels: {
+                                fontColor: '#e0e0e0' /* Light text for the legend */
+                            }
                         }
                     }
                 }
