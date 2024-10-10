@@ -109,3 +109,13 @@ h2:after {
     background: #00aaff; /* Blue underline for section headers */
     margin-top: 8px;
 }
+
+/* Chart.js Canvas Customization */
+#roadmapChart {
+    max-width: 100%; /* Make sure the chart doesn't overflow */
+    margin: 20px 0;
+    background-color: #1b1b1b; /* Ensure canvas fits dark theme */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Adding shadow for canvas */
+}
