@@ -91,5 +91,20 @@
         <p>A: You can contribute by forking the repository, making your changes, and submitting a pull request on GitHub. Be sure to check the <a href="changelog.html">Changelog</a> for recent updates and the <a href="roadmap.html">Roadmap</a> page for upcoming features. Also check my <a href="contact.html">Contact</a> page to get in touch with me!</p>
 
     </div>
+     <!--Script that selects active cless for page that it is on-->>
+     <script>
+        // Get the current URL path
+        const currentPath = window.location.pathname.split("/").pop();
+    
+        // Get all nav links
+        const navLinks = document.querySelectorAll("nav ul li a");
+    
+        // Loop through each nav link and add 'active' class to the one that matches the current path
+        navLinks.forEach(link => {
+            if (link.getAttribute("href") === currentPath) {
+                link.classList.add("active");
+            }
+        });
+    </script>
 </body>
 </html>
