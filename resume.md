@@ -8,7 +8,7 @@ permalink: /resume/
 
 **System Engineer | Linux Administrator**  
 Kansas City, MO  
-[matt.prentice1@protonmail.com](mailto:matt.prentice1@protonmail.com)
+[prenticesolutions@proton.me](mailto:matt.prentice1@protonmail.com)
 
 ---
 
@@ -83,3 +83,6 @@ Rank: Specialist | March 2005 – November 2008
 - **Version Control:** GitHub, Bitbucket
 - **Project Management:** Led enterprise-level system deployments, secured Dell partnerships
 - **Problem Solving:** Skilled at resolving Linux, cloud, and VMware-related issues, ensuring system uptime and efficiency
+
+## Download Resume
+[Click here to download the PDF version of my resume](./resume.pdf)
