@@ -18,30 +18,30 @@ This project involves deploying a Kubernetes cluster to capture network traffic 
 - **Ansible** for automation
 
 ## Key Components
-- **Monitoring Pod**: [View Configuration](/yml-pages/monitoring-pod.html)
-- **NGINX ConfigMap**: [View Configuration](/yml-pages/nginx-configmap.html)
-- **NGINX Reverse Proxy**: [View Configuration](/yml-pages/nginx-reverse-proxy.html)
-- **Persistent Volume**: [View Configuration](/yml-pages/persistent-volume.html)
-- **Persistent Volume Claim**: [View Configuration](/yml-pages/persistent-volume-claim.html)
-- **PrenticeOps Kubernetes Dashboard**: [View Configuration](/yml-pages/kubernetes-dash.html)
-- **Prometheus Config**: [View Configuration](/yml-pages/prometheus-config.html)
-- **Prometheus Service**: [View Configuration](/yml-pages/prometheus-service.html)
+- **Monitoring Pod**: [View Configuration](/kubernetes-portfolio/yml-pages/monitoring-pod.html)
+- **NGINX ConfigMap**: [View Configuration](/kubernetes-portfolio/yml-pages/nginx-configmap.html)
+- **NGINX Reverse Proxy**: [View Configuration](/kubernetes-portfolio/yml-pages/nginx-reverse-proxy.html)
+- **Persistent Volume**: [View Configuration](/kubernetes-portfolio/yml-pages/persistent-volume.html)
+- **Persistent Volume Claim**: [View Configuration](/kubernetes-portfolio/yml-pages/persistent-volume-claim.html)
+- **PrenticeOps Kubernetes Dashboard**: [View Configuration](/kubernetes-portfolio/yml-pages/kubernetes-dash.html)
+- **Prometheus Config**: [View Configuration](/kubernetes-portfolio/yml-pages/prometheus-config.html)
+- **Prometheus Service**: [View Configuration](/kubernetes-portfolio/yml-pages/prometheus-service.html)
 - **Grafana**: Installed via Helm for visualizing metrics collected by Prometheus.
-- **Traffic Backup Pod**: [View Configuration](/yml-pages/traffic-backup.html)
-- **Traffic Backup Service**: [View Configuration](/yml-pages/traffic-backup-service.html)
-- **Traffic Collector Pod**: [View Configuration](/yml-pages/traffic-collector.html)
-- **Traffic Collector Service**: [View Configuration](/yml-pages/traffic-collector-service.html)
+- **Traffic Backup Pod**: [View Configuration](/kubernetes-portfolio/yml-pages/traffic-backup.html)
+- **Traffic Backup Service**: [View Configuration](/kubernetes-portfolio/yml-pages/traffic-backup-service.html)
+- **Traffic Collector Pod**: [View Configuration](/kubernetes-portfolio/yml-pages/traffic-collector.html)
+- **Traffic Collector Service**: [View Configuration](/kubernetes-portfolio/yml-pages/traffic-collector-service.html)
 
 ## Project Architecture
-![Project Architecture](./images/diagram.png)
+![Project Architecture](/kubernetes-portfolio/images/diagram.png)
 
-[View Full Architecture Overview](architecture.html)
+[View Full Architecture Overview](/kubernetes-portfolio/architecture.md)
 
 ## Setup Guide
-To set up the cluster, follow the [Setup Guide](./setup.html).
+To set up the cluster, follow the [Setup Guide](/kubernetes-portfolio/setup.md).
 
 ## Screenshots
-![Grafana Dashboard](./images/grafana-dashboard.png)
+![Grafana Dashboard](/kubernetes-portfolio/images/grafana-dashboard.png)
 
 ## Future Enhancements
 - Jenkins CI/CD pipeline for automated configuration updates.
