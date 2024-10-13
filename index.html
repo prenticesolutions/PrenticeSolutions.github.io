@@ -67,6 +67,7 @@
 <body>
     <nav>
         <ul>
+            <li><a href="index.html">Home</a></li> <!-- Home link added -->
             <li><a href="roadmap.html">Roadmap</a></li>
             <li><a href="architecture.html">Architecture Overview</a></li>
             <li><a href="doc.html">Documentation</a></li>
@@ -154,5 +155,19 @@
     <!-- Prism.js for Syntax Highlighting -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-yaml.min.js"></script>
+    <script>
+        // Get the current URL path
+        const currentPath = window.location.pathname.split("/").pop();
+    
+        // Get all nav links
+        const navLinks = document.querySelectorAll("nav ul li a");
+    
+        // Loop through each nav link and add 'active' class to the one that matches the current path
+        navLinks.forEach(link => {
+            if (link.getAttribute("href") === currentPath) {
+                link.classList.add("active");
+            }
+        });
+    </script>
 </body>
 </html>
