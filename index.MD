@@ -3,46 +3,28 @@ layout: default
 title: "Home"
 ---
 
-# Home Kubernetes Cluster for Network Monitoring and Automation
+## Welcome
 
-Welcome to the documentation for my home Kubernetes cluster project, where I’ve built a system for monitoring network traffic, storing data, and visualizing network metrics.
+Welcome to my portfolio, where I showcase projects in Kubernetes and Terraform for cloud infrastructure, automation, and network monitoring.
 
 ## Project Overview
-This project involves deploying a Kubernetes cluster to capture network traffic using `tcpdump`, securely accessing it through an NGINX reverse proxy, and visualizing data using Prometheus and Grafana.
 
-## Technologies Used
-- **Kubernetes** for orchestration
-- **Docker** for containerization
-- **NGINX** for reverse proxying
-- **Prometheus** & **Grafana** for monitoring
-- **Ansible** for automation
+### Kubernetes Cluster for Network Monitoring
+This project involves deploying a Kubernetes cluster to capture, monitor, and visualize network traffic using Prometheus and Grafana. The system is designed for real-time metrics visualization and secure access through NGINX.
 
-## Key Components
-- **Monitoring Pod**: [View Configuration](/kubernetes-portfolio/yml-pages/monitoring-pod.html)
-- **NGINX ConfigMap**: [View Configuration](/kubernetes-portfolio/yml-pages/nginx-configmap.html)
-- **NGINX Reverse Proxy**: [View Configuration](/kubernetes-portfolio/yml-pages/nginx-reverse-proxy.html)
-- **Persistent Volume**: [View Configuration](/kubernetes-portfolio/yml-pages/persistent-volume.html)
-- **Persistent Volume Claim**: [View Configuration](/kubernetes-portfolio/yml-pages/persistent-volume-claim.html)
-- **PrenticeOps Kubernetes Dashboard**: [View Configuration](/kubernetes-portfolio/yml-pages/kubernetes-dash.html)
-- **Prometheus Config**: [View Configuration](/kubernetes-portfolio/yml-pages/prometheus-config.html)
-- **Prometheus Service**: [View Configuration](/kubernetes-portfolio/yml-pages/prometheus-service.html)
-- **Grafana**: Installed via Helm for visualizing metrics collected by Prometheus.
-- **Traffic Backup Pod**: [View Configuration](/kubernetes-portfolio/yml-pages/traffic-backup.html)
-- **Traffic Backup Service**: [View Configuration](/kubernetes-portfolio/yml-pages/traffic-backup-service.html)
-- **Traffic Collector Pod**: [View Configuration](/kubernetes-portfolio/yml-pages/traffic-collector.html)
-- **Traffic Collector Service**: [View Configuration](/kubernetes-portfolio/yml-pages/traffic-collector-service.html)
+- **Technologies Used:** Kubernetes, Docker, NGINX, Prometheus, Grafana, Ansible
+- [View Kubernetes Project Details](/kubernetes-portfolio/architecture.md)
+- [View Kubernetes Configurations](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/prenticesolutions/PrenticeSolutions.github.io/tree/main/kubernetes-portfolio/configs)
 
-## Project Architecture
-![Project Architecture](/kubernetes-portfolio/images/diagram.png)
+### Terraform Infrastructure Automation (Coming Soon)
+An upcoming project focused on automating infrastructure deployments using Terraform on Google Cloud Platform (GCP). This project will showcase cloud automation and scalability techniques using infrastructure as code.
 
-[View Full Architecture Overview](/kubernetes-portfolio/architecture.md)
-
-## Setup Guide
-To set up the cluster, follow the [Setup Guide](/kubernetes-portfolio/setup.md).
-
-## Screenshots
-![Grafana Dashboard](/kubernetes-portfolio/images/grafana-dashboard.png)
+- **Technologies Used:** Terraform, GCP, Ansible
+- Detailed project information and code will be available soon!
 
 ## Future Enhancements
-- Jenkins CI/CD pipeline for automated configuration updates.
-- Alertmanager for comprehensive alerting.
+
+- Kubernetes project expansion with CI/CD pipeline integration and advanced alerting systems using Jenkins and Alertmanager.
+- Terraform automation projects for cloud infrastructure deployment and management on GCP.
+
+Stay tuned for more updates on my Terraform portfolio and enhancements to the Kubernetes project!
