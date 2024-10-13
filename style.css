@@ -37,10 +37,6 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
 /* Navigation Bar Styles */
 nav {
     background-color: #333; /* Background for the whole nav bar */
