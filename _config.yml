@@ -1,0 +1,65 @@
+# Site settings
+title: "Portfolio" # Your site's title
+email: prenticesolutions@proton.me # Your contact email
+description: "Showcase of DevOps skills and projects" # A brief description of your site
+baseurl: "" # Leave blank if your site is deployed at the root (e.g., username.github.io)
+url: "https://PrenticeSolutions.github.io" # Your GitHub Pages URL
+github_username: prenticesolutions
+
+# Theme settings
+remote_theme: carlosperate/jekyll-theme-rtd # The Jekyll theme you are using
+
+# Sidebar navigation (this generates the left-hand navigation panel)
+nav:
+  - title: "Home"
+    url: "/"
+  - title: "Roadmap"
+    url: "/roadmap/"
+  - title: "Architecture Overview"
+    url: "/architecture/"
+  - title: "Documentation"
+    url: "/documentation/"
+  - title: "Setup Guide"
+    url: "/setup/"
+  - title: "Tutorials"
+    url: "/tutorials/"
+  - title: "Changelog"
+    url: "/changelog/"
+  - title: "FAQ"
+    url: "/faq/"
+  - title: "Contact"
+    url: "/contact/"
+
+# Plugins for Jekyll
+plugins:
+  - jekyll-feed # Generates an Atom feed for your site
+  - jekyll-remote-theme # Enables using remote themes
+  - jekyll-seo-tag # Adds SEO tags automatically (optional, but recommended)
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Exclude from processing
+# This tells Jekyll which files or directories to ignore
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - .jekyll-cache/
+  - .sass-cache/
+  - README.md
+
+# Optional: Include these directories/files for processing
+# include: []
+
+# Optional settings for SEO and social media (if you install jekyll-seo-tag)
+# These can help make your site more discoverable and provide better SEO
+seo:
+  title: "Portfolio - Prentice Solutions"
+  description: "Home Kubernetes Cluster for Network Monitoring and Automation"
+  author: "Prentice Solutions"
+  email: prenticesolutions@proton.me
+  twitter_username: "" # Add if you have one
+  github_username: prenticesolutions
