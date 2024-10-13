@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Home Kubernetes Cluster for Network Monitoring and Automation"
+title: "Home"
 ---
 
 # Home Kubernetes Cluster for Network Monitoring and Automation
