@@ -93,6 +93,9 @@ nav ul li a:hover:not(.active) {
 
 .container {
     margin-top: 70px; /* Ensure content is not under the nav */
+    a:hover {
+        text-decoration: underline; /* Underline other links when hovered */
+    }
 }
 
 /* Responsive Design for Nav */
