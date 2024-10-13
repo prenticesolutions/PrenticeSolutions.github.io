@@ -43,36 +43,47 @@ For more detailed information on each component, refer to the `configs/` directo
 
 The project architecture consists of several interconnected components deployed in the Kubernetes cluster. It includes traffic capture, data backup, monitoring, and visualization. The components interact through services, persistent volumes, and NGINX as a reverse proxy for secure access.
 
-![Project Architecture](./images/diagram.png)
+![Project Architecture](/kubernetes-portfolio/images/diagram.png)
 
-[View Full Architecture Overview](./architecture.html)
+[View Full Architecture Overview](/kubernetes-portfolio/architecture.md)
 
 ## Setup Guide
 
-To set up the cluster, please follow the detailed [Setup Guide](./setup.html).
+To set up the cluster, please follow the detailed [Setup Guide](/kubernetes-portfolio/setup.html).
 
-1. Clone the repository:
+# Download or Clone the Repository
+
+You have two options to get the Kubernetes configuration files:
+
+1. **Clone the entire repository**:
+    If you'd like to clone the whole project, including all the files, run the following command:
+
     ```bash
-    git clone https://github.com/yourusername/repo-name.git
+    git clone https://github.com/prenticesolutions/PrenticeSolutions.github.io.git
     ```
 
-2. Deploy the Kubernetes cluster using the provided YAML files in the `configs/` directory.
+2. **Download only the `configs` folder**:
+    If you're only interested in the configuration files inside the Kubernetes portfolio, you can download just the `configs` folder.
 
-3. Install the necessary Helm charts for Prometheus and Grafana:
+    - Click [here to download the `configs` folder](https://github.com/prenticesolutions/PrenticeSolutions.github.io/tree/main/kubernetes-portfolio/configs).
+
+3. Deploy the Kubernetes cluster using the provided YAML files in the `configs/` directory.
+
+4. Install the necessary Helm charts for Prometheus and Grafana:
     ```bash
     helm install prometheus stable/prometheus
     helm install grafana stable/grafana
     ```
 
-4. Configure NGINX reverse proxy for secure access.
+5. Configure NGINX reverse proxy for secure access.
 
-5. Start monitoring your network traffic.
+6. Start monitoring your network traffic.
 
 ## Screenshots
 
 Below is a sample screenshot of the Grafana dashboard monitoring home network traffic:
 
-![Grafana Dashboard](./images/grafana-dashboard.png)
+![Grafana Dashboard](/kubernetes-portfolio/images/grafana-dashboard.png)
 
 ## Future Enhancements
 
