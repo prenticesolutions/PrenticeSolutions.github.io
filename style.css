@@ -11,6 +11,9 @@ body {
     background-color: #121212; /* Dark background for body */
     color: #e0e0e0; /* Light text color */
     margin: 20px;
+    a:hover {
+        text-decoration: underline; /* Underline other links when hovered */
+    }
 }
 
 h1, h2 {
@@ -89,9 +92,6 @@ nav ul li a:hover:not(.active) {
 
 .container {
     margin-top: 70px; /* Ensure content is not under the nav */
-    a:hover {
-        text-decoration: underline; /* Underline other links when hovered */
-    }
 }
 
 /* Responsive Design for Nav */
