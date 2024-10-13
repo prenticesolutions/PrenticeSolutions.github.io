@@ -32,9 +32,14 @@ p {
     margin-bottom: 10px;
 }
 
+/* General link styles (non-navigation links) */
 a {
     color: #00aaff; /* Bright blue for links */
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* Underline other links when hovered */
 }
 
 /* Navigation Bar Styles */
@@ -80,7 +85,7 @@ nav ul li a.active {
     border-bottom: 2px solid #00aaff; /* Underline active link */
 }
 
-/* Hover effect without overriding the active state */
+/* Hover effect for nav links (without underlining) */
 nav ul li a:hover:not(.active) {
     color: white;
     border-bottom: 2px solid #00aaff;
