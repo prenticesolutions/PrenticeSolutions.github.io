@@ -64,6 +64,7 @@ exclude:
   - .jekyll-cache/
   - .sass-cache/
   - README.md
+  - templates/
 
 # SEO settings
 seo:
