@@ -56,11 +56,15 @@ img {
 
 /* Hamburger Button Styles */
 .hamburger {
-    display: none;
+    display: flex;
     flex-direction: column;
     cursor: pointer;
-    margin: 10px;
     padding: 10px;
+    margin: 0;
+    position: relative;
+    z-index: 1100; /* Ensure the hamburger is on top */
+    background: none;
+    border: none;
 }
 
 .hamburger span {
@@ -74,14 +78,15 @@ img {
 /* Navigation Bar Styles */
 nav {
     background-color: #333; /* Background for the whole nav bar */
-    padding: 10px 0;
-    text-align: center; 
+    padding: 10px;
+    text-align: left;
     position: fixed;
     top: 0;
-    width: 100%;
+    width: auto; /* Adjust width to auto */
     z-index: 1000;
 }
 
+/* Hide the menu by default */
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -95,8 +100,8 @@ nav ul.active {
 }
 
 nav ul li {
-    display: inline-block;
     margin-right: 20px;
+    padding: 5px 0;
 }
 
 nav ul li:last-child {
@@ -125,15 +130,15 @@ nav ul li a.active {
     display: flex;
 }
 
-/* Responsive Design for Nav */
+/* Desktop View: Hamburger is visible, but nav starts hidden */
 @media (min-width: 769px) {
-    .hamburger {
-        display: flex; /* Show hamburger on desktop as well */
+    nav {
+        width: auto; /* Set width to auto to avoid long background */
     }
 
     nav ul {
-        flex-direction: row; /* Horizontal nav on desktop */
         display: none; /* Hide menu by default */
+        flex-direction: row;
     }
 
     nav ul.active {
@@ -141,6 +146,7 @@ nav ul li a.active {
     }
 }
 
+/* Mobile View: Menu is hidden initially, shown when active */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
