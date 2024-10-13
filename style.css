@@ -39,10 +39,7 @@ p {
         text-decoration: none;
     }
 }
-    a:hover {
-        color:#e0e0e0; /* Light text color on hover */
-        text-decoration: underline; /* Underline on hover */
-}
+
 
 /* Navigation Bar Styles */
 nav {
