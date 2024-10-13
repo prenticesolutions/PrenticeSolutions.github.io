@@ -80,7 +80,7 @@ Since this is an educational project, Docker Desktop will automatically create t
 
 * * *
 
-Step 4: Installing Helm and Grafana
+Step 4: Installing Helm, Kubernets Dashboard and Grafana
 -----------------------------------
 
 ### Install Helm:
@@ -98,6 +98,22 @@ Run the following command to install Helm:
 2.  Add the Grafana Helm chart repository:
     
         helm repo add grafana https://grafana.github.io/helm-charts
+
+3.  Add the Kubernetes Dashboard Helm chart repository:
+    
+        helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard/
+
+### Update Helm Repositories:
+
+    helm repo update
+
+### Install the Kubernetes Dashboard:
+1.  Install the Kubernetes Dashboard using Helm:
+    
+        helm upgrade --install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --create-namespace --namespace kubernetes-dashboard
+
+2. Follow Kubernetes Dashboard's official documentation for setting up user credentials and further customization.
+    [Kubernetes Dashboard Documentation](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
     
 
 ### Install Grafana:
@@ -107,57 +123,26 @@ Run the following command to install Helm:
         helm install grafana grafana/grafana kubectl port-forward svc/grafana 3000:80
     
 2.  Follow Grafana’s official documentation for setting up user credentials and further customization.
+    [Grafana Documentation](https://grafana.com/docs/grafana/latest/)
 
 * * *
 
-Step 5: Deploying the Pods
---------------------------
-
-Once Grafana is set up, it's time to deploy the Kubernetes pods. Each configuration file is applied using `kubectl apply -f` in the following order:
-
-### Deploy the NGINX ConfigMap and NGINX Pod:
-
-    kubectl apply -f nginx-configmap.yml kubectl apply -f nginx-reverse-proxy.yml
-
-### Deploy the Monitoring (Prometheus) Pod:
-
-    kubectl apply -f monitoring-pod.yml
-
-### Deploy the Kubernetes Dashboard Pod:
-
-    kubectl apply -f kubernetes-dash.yml
-
-* * *
-
-Step 6: Accessing the Kubernetes Dashboard
-------------------------------------------
-
-To access the Kubernetes Dashboard, you need to run the following command to proxy requests from your local machine:
-
-    kubectl proxy
-
-Once the proxy is running, open a browser and go to the following URL:
-
-    http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
-
-This will open the Kubernetes Dashboard, where you can monitor and manage your cluster.
-
-* * *
-
-Step 7: Deploying the Persistent Volume and Services
+Step 6: Deploying the Persistent Volume and Services
 ----------------------------------------------------
 
 ### Deploy the Persistent Volume and Claim:
 
-    kubectl apply -f persistent-volume.yml kubectl apply -f persistent-volume-claim.yml
+    kubectl apply -f persistent-volume.yml 
+    kubectl apply -f persistent-volume-claim.yml
 
 ### Deploy the Traffic Backup and Collector Services:
 
-    kubectl apply -f traffic-backup-service.yml kubectl apply -f traffic-collector-service.yml
+    kubectl apply -f traffic-backup-service.yml 
+    kubectl apply -f traffic-collector-service.yml
 
 * * *
 
-Step 8: Deploying the Traffic Pods
+Step 7: Deploying the Traffic Pods
 ----------------------------------
 
 ### Deploy the Traffic Backup Pod:
@@ -170,7 +155,7 @@ Step 8: Deploying the Traffic Pods
 
 * * *
 
-Step 9: Setting Up the NGINX Reverse Proxy
+Step 8: Setting Up the NGINX Reverse Proxy
 --------------------------------------
 
 Setting up the NGINX reverse proxy allows secure access to the Grafana and Kubernetes dashboards.
@@ -217,8 +202,26 @@ Setting up the NGINX reverse proxy allows secure access to the Grafana and Kuber
 
 ***
 
-Monitoring and Visualizing Metrics
-----------------------------------
+Step 9: Accessing the Kubernetes and Grafana Dashboards
+-------------------------------------------------------
 
-Once the Prometheus and Grafana services are running, you can monitor network metrics by accessing Grafana at `localhost:3000`. Follow Grafana's official documentation to set up dashboards, add data sources, and visualize real-time network traffic.
+To access the Kubernetes Dashboard, you need to run the following command to proxy requests from your local machine:
+
+    kubectl proxy
+
+Once the proxy is running, open a browser and go to the following URL:
+
+    http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/.
+
+This will open the Kubernetes Dashboard, where you can monitor and manage your cluster. (Note: The period at the end of the URL is required.)
+
+* * *
+
+To access the Grafana Dashboard, you need to run the following command to forward the Grafana service to your localhost:
+
+    kubectl port-forward svc/grafana 3000:3000
+
+Open your browser and go to `http://localhost:3000` to access the Grafana dashboard.
+
+***
 

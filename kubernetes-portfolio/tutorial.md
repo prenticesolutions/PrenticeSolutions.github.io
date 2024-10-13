@@ -1,9 +1,9 @@
 ---
 layout: default
-title: "Tutorials"
+title: "How-To Guide"
 ---
-How-To Guides and Tutorials
-===========================
+How-To Guide
+================
 
 This page provides step-by-step guides on essential tasks for managing and using the Kubernetes network monitoring cluster.
 
@@ -32,7 +32,7 @@ To access Grafana and the Kubernetes Dashboard, you'll need to set up port forwa
 
 1.  Run the following command to forward the Grafana service to your localhost:
 
-    kubectl port-forward svc/grafana 3000:80
+    kubectl port-forward svc/grafana 3000:3000
 
 3.  Open your browser and go to `http://localhost:3000` to access the Grafana dashboard.
 
