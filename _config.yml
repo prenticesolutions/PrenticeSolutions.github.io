@@ -1,0 +1,75 @@
+# Site settings
+title: "Prentice Solutions Portfolio"
+email: prenticesolutions@proton.me
+description: "Showcase of Kubernetes and Terraform projects for DevOps automation"
+baseurl: "" # Leave blank since your site is at root
+url: "https://PrenticeSolutions.github.io"
+github_username: prenticesolutions
+
+# Theme settings
+remote_theme: carlosperate/jekyll-theme-rtd
+
+# Sidebar navigation (this generates the left-hand navigation panel)
+nav:
+  - title: "Home"
+    url: "/kubernetes-portfolio/index"
+  - title: "Resume"
+    url: "/resume/"
+  - title: "Kubernetes Portfolio"
+    url: "/kubernetes-portfolio/"
+  - title: "Terraform Portfolio"
+    url: "/terraform-portfolio/"
+  - title: "Roadmap"
+    url: "/kubernetes-portfolio/roadmap/"
+  - title: "Architecture Overview"
+    url: "/kubernetes-portfolio/architecture/"
+  - title: "Documentation"
+    url: "/kubernetes-portfolio/documentation/"
+  - title: "Setup Guide"
+    url: "/kubernetes-portfolio/setup/"
+  - title: "Tutorials"
+    url: "/kubernetes-portfolio/tutorials/"
+  - title: "FAQ"
+    url: "/kubernetes-portfolio/faq/"
+  - title: "Changelog"
+    url: "/kubernetes-portfolio/changelog/"
+  - title: "Contact"
+    url: "/contact/"
+
+# Collections for Kubernetes and Terraform
+collections:
+  kubernetes-portfolio:
+    output: true
+    permalink: /kubernetes-portfolio/:path/
+  terraform-portfolio:
+    output: true
+    permalink: /terraform-portfolio/:path/
+
+# Plugins for Jekyll
+plugins:
+  - jekyll-feed
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - .jekyll-cache/
+  - .sass-cache/
+  - README.md
+  - templates/
+
+# SEO settings
+seo:
+  title: "Portfolio - Prentice Solutions"
+  description: "Showcase of Kubernetes and Terraform Projects for DevOps Automation"
+  author: "Prentice Solutions"
+  email: prenticesolutions@proton.me
+  github_username: prenticesolutions

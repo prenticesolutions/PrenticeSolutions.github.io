@@ -1,0 +1,150 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #121212; /* Dark background for body */
+    color: #e0e0e0; /* Light text color */
+    margin: 20px;
+}
+
+h1, h2 {
+    color: #00aaff; /* Bright blue for headings */
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-top: 30px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+.container {
+    margin-top: 70px; /* Ensure content is not under the nav */
+    max-width: 100%;
+    padding: 10px; /* Slight padding for better readability */
+}
+
+/* Logo Styles */
+.logo {
+    float: left;
+    color: #00aaff;
+    font-size: 1.5em;
+    margin-left: 20px;
+}
+
+.logo h1 {
+    font-size: 1.8em;
+    margin: 0;
+}
+
+/* Navigation Bar Styles */
+nav {
+    background-color: #333; /* Background for the whole nav bar */
+    padding: 10px;
+    text-align: right; /* Align the links to the right */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Make links spread horizontally */
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0; /* Remove margin on the last item */
+}
+
+nav ul li a {
+    color: #00aaff; /* Text color */
+    font-size: 1em;
+    padding: 5px; /* Minimal padding to avoid button-like appearance */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: white;
+    border-bottom: 2px solid #00aaff; /* Underline on hover or when active */
+}
+
+/* Mobile-friendly navigation: Stack links vertically on mobile */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack logo and nav vertically */
+        align-items: center;
+    }
+
+    nav ul {
+        display: none; /* Hide the links initially on mobile */
+        flex-direction: column; /* Stack links vertically on mobile */
+        background-color: #333; /* Consistent background for dropdown */
+        width: 100%;
+    }
+
+    nav ul.active {
+        display: flex; /* Show menu when active */
+    }
+
+    nav ul li {
+        text-align: center; /* Center links on mobile */
+        margin: 10px 0; /* Add vertical margin for mobile */
+    }
+
+    nav ul li a {
+        font-size: 1.2em;
+    }
+
+    /* Logo */
+    .logo {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+
+/* Mobile toggle button */
+.mobile-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    padding: 10px;
+    color: #00aaff;
+    background-color: #333;
+    border: none;
+    text-align: center;
+    width: 100%;
+}
+
+/* Show mobile toggle button on smaller screens */
+@media (max-width: 768px) {
+    .mobile-toggle {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+}

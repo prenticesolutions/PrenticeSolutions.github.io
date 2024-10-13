@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAML Configuration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+        }
+        pre {
+            background-color: #2e2e2e;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        h1 {
+            color: #00aaff;
+        }
+    </style>
+</head>
+<body>
+    <h1>NGINX Revers Proxy Configuration</h1>
+    <pre><code class="language-yaml">
+        apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          name: nginx-reverse-proxy
+          labels:
+            app: nginx-reverse-proxy
+        spec:
+          replicas: 1
+          selector:
+            matchLabels:
+              app: nginx-reverse-proxy
+          template:
+            metadata:
+              labels:
+                app: nginx-reverse-proxy
+            spec:
+              containers:
+                - name: nginx
+                  image: nginx
+                  ports:
+                    - containerPort: 80
+                  volumeMounts:
+                    - mountPath: /etc/nginx/nginx.conf
+                      name: config-volume
+              volumes:
+                - name: config-volume
+                  configMap:
+                    name: nginx-config
+        
+    </code></pre>
+
+    <!-- Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-yaml.min.js"></script>
+</body>
+</html>

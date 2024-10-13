@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: traffic-backup
+  labels:
+    app: traffic-backup
+spec:
+  containers:
+    - name: backup
+      image: busybox
+      command:
+        - sh
+        - -c
+        - 'while true; do cp /mnt/data/traffic.pcap /backup/traffic-$(date +%Y%m%d%H%M%S).pcap; ls -t /backup/*.pcap | tail -n +11 | xargs rm -f; sleep 300; done'
+      volumeMounts:
+        - mountPath: /mnt/data
+          name: backup-storage
+        - mountPath: /backup
+          name: backup-storage
+    - name: prometheus-exporter
+      image: prom/node-exporter
+      ports:
+        - containerPort: 9090
+      args:
+        - --path.procfs=/proc
+        - --path.sysfs=/sys
+        - --web.listen-address=:9090
+  volumes:
+    - name: backup-storage
+      persistentVolumeClaim:
+        claimName: backup-pvc
