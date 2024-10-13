@@ -75,8 +75,8 @@ img {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow for images */
 }
 
-/* Setup Guide Link */
-a:link, a:visited {
+/* Specific Setup Guide Link */
+a.setup-guide {
     background-color: #00aaff; /* Bright blue for buttons */
     color: white;
     padding: 10px 15px;
@@ -86,7 +86,7 @@ a:link, a:visited {
     border-radius: 5px;
 }
 
-a:hover, a:active {
+a.setup-guide:hover, a.setup-guide:active {
     background-color: #0077cc; /* Slightly darker on hover */
 }
 
@@ -128,7 +128,7 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000; /* Ensure navbar is always on top */
+    z-index: 1000;
 }
 
 nav ul {
@@ -148,6 +148,9 @@ nav ul li a {
     font-size: 1em;
     padding: 5px 10px;
     transition: color 0.3s ease;
+    background: none; /* Remove any background styling */
+    border-radius: 0; /* Remove border radius */
+    padding: 0; /* Remove extra padding */
 }
 
 nav ul li a:hover,
