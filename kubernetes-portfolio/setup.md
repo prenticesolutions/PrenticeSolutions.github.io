@@ -13,10 +13,19 @@ Step 1: Clone the Repository
 
 Before you begin, clone the repository containing all the configuration files to your local machine. You can do this via Git, GitHub Desktop, or VS Code's integration.
 
-### Using GitHub Desktop:
+## Step 1: Clone the Repository
 
-1.  Open **GitHub Desktop** and click on **Clone a repository**.
-2.  Choose the repository and select the directory to save it in.
+To clone the repository using Git from the command line, follow these steps:
+
+1. Open a terminal on your local machine.
+2. Run the following command to clone the repository:
+    ```bash
+    git clone https://github.com/prenticesolutions/PrenticeSolutions.github.io.git
+    ```
+3. Navigate to the cloned directory:
+    ```bash
+    cd PrenticeSolutions.github.io/configs
+    ```
 
 ### Using VS Code:
 
