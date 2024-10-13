@@ -12,7 +12,7 @@ remote_theme: carlosperate/jekyll-theme-rtd
 # Sidebar navigation (this generates the left-hand navigation panel)
 nav:
   - title: "Home"
-    url: "/"
+    url: "/kubernetes-portfolio/index"
   - title: "Resume"
     url: "/resume/"
   - title: "Kubernetes Portfolio"
