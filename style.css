@@ -41,8 +41,18 @@ p {
 
 .container {
     margin-top: 70px; /* Ensure content is not under the nav */
+    max-width: 100%; /* Full width on mobile devices */
+    padding: 10px; /* Slight padding for better readability */
 }
 
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow for images */
+}
 
 /* Navigation Bar Styles */
 nav {
@@ -96,5 +106,33 @@ nav ul li a.active {
 
     nav ul li a {
         font-size: 1.2em;
+    }
+}
+
+/* Responsive design for mobile devices like iPhone, Pixel, Samsung */
+@media (max-width: 1024px) {
+    body {
+        margin: 10px; /* Reduce margin on mobile */
+    }
+
+    h1 {
+        font-size: 2rem; /* Adjust font size on smaller screens */
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1.1em; /* Make text slightly bigger on mobile for readability */
+    }
+
+    .container {
+        width: 100%;
+        padding: 15px; /* More padding on smaller screens for better readability */
+    }
+
+    img {
+        margin-top: 15px; /* Reduce margin for images */
     }
 }
