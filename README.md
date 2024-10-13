@@ -93,6 +93,10 @@ Here are some planned enhancements to further improve the system:
 - **Alerting System**: Implementation of Prometheus Alertmanager for network monitoring alerts.
 - **Expanded Documentation**: More tutorials and use cases will be added.
 
+## Terraform Portfolio (Coming Soon)
+
+- A portfolio for my Terraform projects on Google Cloud Platform will be available soon, showcasing my work on infrastructure automation using Terraform.
+
 ## Contact
 
 If you have any questions or suggestions, feel free to contact me via:
