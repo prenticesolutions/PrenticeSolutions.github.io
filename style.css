@@ -32,12 +32,6 @@ p {
     margin-bottom: 10px;
 }
 
-/* General link styles (non-navigation links) */
-a {
-    color: white;
-    text-decoration: underline;
-}
-
 /* Navigation Bar Styles */
 nav {
     background-color: #333; /* Background for the whole nav bar */
@@ -90,6 +84,10 @@ nav ul li a.active {
 
 .container {
     margin-top: 70px; /* Ensure content is not under the nav */
+    a {
+        color: white;
+        text-decoration: underline;
+    }
 }
 
 /* Responsive Design for Nav */
