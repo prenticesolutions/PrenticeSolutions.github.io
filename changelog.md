@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Changelog - Kubernetes Cluster Project"
+title: "Changelog"
 ---
 
 # Changelog
