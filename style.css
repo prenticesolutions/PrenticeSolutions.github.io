@@ -34,7 +34,7 @@ p {
 
 .container {
     margin-top: 70px; /* Ensure content is not under the nav */
-    max-width: 100%; /* Full width on mobile devices */
+    max-width: 100%;
     padding: 10px; /* Slight padding for better readability */
 }
 
@@ -60,16 +60,19 @@ nav {
     top: 0;
     width: 100%;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex; /* Make links spread horizontally */
 }
 
 nav ul li {
-    display: inline-block;
     margin-right: 20px;
 }
 
@@ -93,16 +96,14 @@ nav ul li a:hover, nav ul li a.active {
 /* Mobile-friendly navigation: Stack links vertically on mobile */
 @media (max-width: 768px) {
     nav {
-        text-align: left; /* Left align the nav on mobile */
+        flex-direction: column; /* Stack logo and nav vertically */
+        align-items: center;
     }
 
     nav ul {
         display: none; /* Hide the links initially on mobile */
         flex-direction: column; /* Stack links vertically on mobile */
         background-color: #333; /* Consistent background for dropdown */
-        position: absolute;
-        top: 60px;
-        left: 0;
         width: 100%;
     }
 
@@ -112,8 +113,7 @@ nav ul li a:hover, nav ul li a.active {
 
     nav ul li {
         text-align: center; /* Center links on mobile */
-        margin: 0; /* Remove margins for mobile */
-        padding: 10px;
+        margin: 10px 0; /* Add vertical margin for mobile */
     }
 
     nav ul li a {
