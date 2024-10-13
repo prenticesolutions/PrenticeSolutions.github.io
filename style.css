@@ -75,6 +75,13 @@ nav ul li a {
     box-shadow: none; /* Remove box-shadow */
 }
 
+/* Hover effect for navbar links */
+nav ul li a:hover {
+    color: darkblue; /* Change color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+
 /* Highlight the active link */
 nav ul li a.active {
     color: white;
