@@ -109,5 +109,3 @@ Setting up the NGINX reverse proxy allows secure access to the Grafana and Kuber
     sudo systemctl restart nginx
 
 7.  Now, when users go to `http:///grafana/`, they will be securely forwarded to the Grafana dashboard.
-
-\> // Get the current URL path const currentPath = window.location.pathname.split("/").pop(); // Get all nav links const navLinks = document.querySelectorAll("nav ul li a"); // Loop through each nav link and add 'active' class to the one that matches the current path navLinks.forEach(link => { if (link.getAttribute("href") === currentPath) { link.classList.add("active"); } });

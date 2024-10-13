@@ -87,4 +87,3 @@ A: Future enhancements include integrating Jenkins for automated CI/CD pipeline,
 
 A: You can contribute by forking the repository, making your changes, and submitting a pull request on GitHub. Be sure to check the [Changelog](changelog.html) for recent updates and the [Roadmap](roadmap.html) page for upcoming features. Also check my [Contact](contact.html) page to get in touch with me!
 
-\> // Get the current URL path const currentPath = window.location.pathname.split("/").pop(); // Get all nav links const navLinks = document.querySelectorAll("nav ul li a"); // Loop through each nav link and add 'active' class to the one that matches the current path navLinks.forEach(link => { if (link.getAttribute("href") === currentPath) { link.classList.add("active"); } });

@@ -133,5 +133,3 @@ Explore the efficiency of using a database pod for storing network traffic data.
 ### Ongoing: Security Enhancements
 
 Continuously improve security, starting with NGINX vulnerability checks.
-
-\> // Get the current URL path const currentPath = window.location.pathname.split("/").pop(); // Get all nav links const navLinks = document.querySelectorAll("nav ul li a"); // Loop through each nav link and add 'active' class to the one that matches the current path navLinks.forEach(link => { if (link.getAttribute("href") === currentPath) { link.classList.add("active"); } });
