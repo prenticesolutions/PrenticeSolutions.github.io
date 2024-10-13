@@ -14,7 +14,7 @@ This project involves deploying a Kubernetes cluster to capture, monitor, and vi
 
 - **Technologies Used:** Kubernetes, Docker, NGINX, Prometheus, Grafana, Ansible
 - [View Kubernetes Project Details](/kubernetes-portfolio/architecture.md)
-- [View Configurations and YAML files](https://github.com/prenticesolutions/PrenticeSolutions.github.io/tree/main/kubernetes-portfolio/configs)
+- [View Configurations and YAML files](https://github.com/prenticesolutions/PrenticeSolutions.github.io/raw/main/kubernetes-portfolio/configs.zip)
 
 ### Terraform Infrastructure Automation (Coming Soon)
 This upcoming project will feature my work on automating infrastructure deployments using Terraform on Google Cloud Platform (GCP).
