@@ -11,9 +11,6 @@ body {
     background-color: #121212; /* Dark background for body */
     color: #e0e0e0; /* Light text color */
     margin: 20px;
-    a:hover {
-        text-decoration: underline; /* Underline other links when hovered */
-    }
 }
 
 h1, h2 {
