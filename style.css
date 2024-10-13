@@ -41,88 +41,9 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Key Components */
-ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-ul li {
-    background: #2b2b2b; /* Darker background for list items */
-    margin-bottom: 10px;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Darker shadow */
-}
-
-ul li:hover {
-    background: #333333; /* Lighter dark on hover */
-}
-
-code {
-    background-color: #2e2e2e; /* Dark background for code blocks */
-    padding: 2px 4px;
-    border-radius: 4px;
-    color: #e0e0e0; /* Light text in code blocks */
-}
-
-/* Images */
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow for images */
-}
-
-/* Specific Setup Guide Link */
-a.setup-guide {
-    background-color: #00aaff; /* Bright blue for buttons */
-    color: white;
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 5px;
-}
-
-a.setup-guide:hover, a.setup-guide:active {
-    background-color: #0077cc; /* Slightly darker on hover */
-}
-
-/* Container */
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    background-color: #1b1b1b; /* Darker container background */
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6); /* Darker shadow for container */
-}
-
-/* Future Enhancements Section */
-h2:after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 4px;
-    background: #00aaff; /* Blue underline for section headers */
-    margin-top: 8px;
-}
-
-/* Chart.js Canvas Customization */
-#roadmapChart {
-    max-width: 100%; /* Make sure the chart doesn't overflow */
-    margin: 20px 0;
-    background-color: #1b1b1b; /* Ensure canvas fits dark theme */
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Adding shadow for canvas */
-}
-
 /* Navigation Bar Styles */
 nav {
-    background-color: #333;
+    background-color: #333; /* Background for the whole nav bar */
     padding: 10px 0;
     text-align: center;
     position: fixed;
@@ -139,24 +60,32 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    margin-right: 15px;
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0; /* Remove margin on the last item */
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #00aaff;
+    color: #00aaff; /* Text color */
     font-size: 1em;
-    padding: 5px 10px;
+    padding: 5px; /* Minimal padding to avoid button-like appearance */
+    text-decoration: none;
     transition: color 0.3s ease;
-    background: none; /* Remove any background styling */
+    background: none; /* Remove any background color */
     border-radius: 0; /* Remove border radius */
-    padding: 0; /* Remove extra padding */
+    box-shadow: none; /* Remove box-shadow */
 }
 
 nav ul li a:hover,
 nav ul li a.active {
     color: white;
-    border-bottom: 2px solid #00aaff;
+    border-bottom: 2px solid #00aaff; /* Underline effect for active link */
+}
+
+.container {
+    margin-top: 70px; /* Ensure content is not under the nav */
 }
 
 /* Responsive Design for Nav */
