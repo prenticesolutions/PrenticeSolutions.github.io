@@ -6,15 +6,15 @@ permalink: /about/
 
 ## About Prentice Solutions
 
-Welcome to the portfolio of Prentice Solutions, where I, Matt, showcase my journey and expertise in DevOps, cloud infrastructure, and automation. This site highlights my hands-on projects, professional skills, and ongoing work in creating efficient, scalable, and resilient systems.
+Welcome to the portfolio of Prentice Solutions, where I, Matt, showcase my journey and skills in DevOps, cloud infrastructure, and automation. This site highlights my hands-on projects, professional experience, and ongoing work in creating efficient, scalable, and resilient systems.
 
-### Expertise and Skills
+### Skills and Focus Areas
 
 - **Kubernetes and Docker:** Building, managing, and scaling containerized applications in home and cloud-based environments.
 - **Infrastructure as Code (IaC) with Terraform:** Automating infrastructure provisioning and configuration on Google Cloud Platform (GCP).
 - **Network Monitoring:** Implementing and visualizing network performance using Prometheus, Grafana, Netdata, and other tools.
 - **Cloud Platforms:** Primarily focused on GCP, with a growing interest in multi-cloud environments and serverless solutions.
-- **Automation and DevOps:** Utilizing CI/CD pipelines, container orchestration, and monitoring to drive operational excellence.
+- **Automation and DevOps:** Utilizing CI/CD pipelines, container orchestration, and monitoring to drive operational improvements.
 
 ### Projects
 
@@ -36,4 +36,3 @@ Feel free to get in touch via [email](mailto:prenticesolutions@proton.me) if you
 ---
 
 Thank you for visiting my portfolio. Let's build something amazing together!
-
