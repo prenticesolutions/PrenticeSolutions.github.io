@@ -7,20 +7,27 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li> <!-- Home link added -->
-            <li><a href="roadmap.html">Roadmap</a></li>
-            <li><a href="architecture.html">Architecture Overview</a></li>
-            <li><a href="doc.html">Documentation</a></li>
-            <li><a href="setup.html">Setup Guide</a></li>
-            <li><a href="tutorial.html">Tutorials</a></li>
-            <li><a href="changelog.html">Changelog</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+<nav>
+    <!-- Hamburger icon -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
+    <!-- Navigation links -->
+    <ul id="nav-links">
+        <li><a href="index.html">Home</a></li> <!-- Home link added -->
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="architecture.html">Architecture Overview</a></li>
+        <li><a href="doc.html">Documentation</a></li>
+        <li><a href="setup.html">Setup Guide</a></li>
+        <li><a href="tutorial.html">Tutorials</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
 
     <div class="container">
         <h1>Home Kubernetes Cluster for Network Monitoring and Automation</h1>
@@ -113,5 +120,12 @@
             }
         });
     </script>
+        <!-- JavaScript for toggling the menu -->
+        <script>
+            function toggleMenu() {
+                const navLinks = document.getElementById('nav-links');
+                navLinks.classList.toggle('active');
+            }
+        </script>
 </body>
 </html>

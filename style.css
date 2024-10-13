@@ -54,6 +54,23 @@ img {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow for images */
 }
 
+/* Hamburger Button Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin: 10px;
+    padding: 10px;
+}
+
+.hamburger span {
+    background-color: #00aaff;
+    height: 4px;
+    width: 30px;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
 /* Navigation Bar Styles */
 nav {
     background-color: #333; /* Background for the whole nav bar */
@@ -69,6 +86,12 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: none; /* Hide menu by default */
+    flex-direction: column; /* Stack links vertically */
+}
+
+nav ul.active {
+    display: flex; /* Show menu when active */
 }
 
 nav ul li {
@@ -97,15 +120,43 @@ nav ul li a.active {
     border-bottom: 2px solid #00aaff; /* Underline active link */
 }
 
+/* Show the hamburger menu on all screen sizes */
+.hamburger {
+    display: flex;
+}
+
 /* Responsive Design for Nav */
+@media (min-width: 769px) {
+    .hamburger {
+        display: flex; /* Show hamburger on desktop as well */
+    }
+
+    nav ul {
+        flex-direction: row; /* Horizontal nav on desktop */
+        display: none; /* Hide menu by default */
+    }
+
+    nav ul.active {
+        display: flex; /* Show menu when active */
+    }
+}
+
 @media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        display: none; /* Hide nav links initially */
+    }
+
+    nav ul.active {
+        display: flex; /* Show the menu when the hamburger is clicked */
+    }
+
     nav ul li {
-        display: block;
         margin-bottom: 10px;
     }
 
-    nav ul li a {
-        font-size: 1.2em;
+    .container {
+        padding: 15px;
     }
 }
 
