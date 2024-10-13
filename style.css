@@ -36,8 +36,11 @@ p {
     margin-top: 70px; /* Ensure content is not under the nav */
     a {
         color: #00aaff; /* Bright blue for links */
-        text-decoration: underline;
+        text-decoration: none;
     }
+}
+    a:hover {
+        text-decoration: underline; /* Underline on hover */
 }
 
 /* Navigation Bar Styles */
