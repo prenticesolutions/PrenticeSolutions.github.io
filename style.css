@@ -84,12 +84,6 @@ nav ul li a.active {
     border-bottom: 2px solid #00aaff; /* Underline active link */
 }
 
-/* Hover effect for nav links (without underlining) */
-nav ul li a:hover:not(.active) {
-    color: white;
-    border-bottom: 2px solid #00aaff;
-}
-
 .container {
     margin-top: 70px; /* Ensure content is not under the nav */
 }
