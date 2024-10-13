@@ -11,6 +11,13 @@ body {
     background-color: #121212; /* Dark background for body */
     color: #e0e0e0; /* Light text color */
     margin: 20px;
+    a {
+        color: #00aaff; /* Bright blue for links */
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
 }
 
 h1, h2 {
@@ -34,10 +41,6 @@ p {
 
 .container {
     margin-top: 70px; /* Ensure content is not under the nav */
-    a {
-        color: #00aaff; /* Bright blue for links */
-        text-decoration: none;
-    }
 }
 
 
