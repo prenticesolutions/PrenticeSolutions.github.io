@@ -32,12 +32,6 @@ p {
     margin-bottom: 10px;
 }
 
-/* General link styles (non-navigation links) */
-a {
-    color: #00aaff; /* Bright blue for links */
-    text-decoration: none;
-}
-
 /* Navigation Bar Styles */
 nav {
     background-color: #333; /* Background for the whole nav bar */
