@@ -34,7 +34,8 @@ p {
 
 /* General link styles (non-navigation links) */
 a {
-    color: white; /* Bright blue for links */
+    color: white;
+    text-decoration: underline;
 }
 
 /* Navigation Bar Styles */
