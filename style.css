@@ -35,7 +35,7 @@ p {
 .container {
     margin-top: 70px; /* Ensure content is not under the nav */
     a {
-        color: white;
+        color: #00aaff; /* Bright blue for links */
         text-decoration: underline;
     }
 }
@@ -44,7 +44,7 @@ p {
 nav {
     background-color: #333; /* Background for the whole nav bar */
     padding: 10px 0;
-    text-align: center;
+    text-align: center; 
     position: fixed;
     top: 0;
     width: 100%;
