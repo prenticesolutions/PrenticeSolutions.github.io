@@ -13,6 +13,8 @@ remote_theme: carlosperate/jekyll-theme-rtd
 nav:
   - title: "Home"
     url: "/"
+  - title: "Resume"
+    url: "/resume/"
   - title: "Kubernetes Portfolio"
     url: "/kubernetes-portfolio/"
   - title: "Terraform Portfolio"
