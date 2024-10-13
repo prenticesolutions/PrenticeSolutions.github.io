@@ -40,6 +40,7 @@ p {
     }
 }
     a:hover {
+        color:#e0e0e0; /* Light text color on hover */
         text-decoration: underline; /* Underline on hover */
 }
 
