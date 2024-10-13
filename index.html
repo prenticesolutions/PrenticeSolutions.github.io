@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Kubernetes Cluster for Network Monitoring and Automation</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to your stylesheet -->
+    <link rel="stylesheet" href="style.css">
 
     <!-- Prism.js CSS for Syntax Highlighting -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    
     <style>
-        /* Refined Navigation Bar Styles */
+        /* Simplified Navigation Bar Styles */
         nav {
             background-color: #333;
-            padding: 5px 0; /* Reduced padding */
+            padding: 10px 0;
             text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure navbar is always on top */
         }
 
         nav ul {
@@ -23,49 +28,53 @@
         }
 
         nav ul li {
-            display: inline;
-            margin-right: 10px; /* Reduced space between links */
+            display: inline-block;
+            margin-right: 15px;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #00aaff;
-            font-size: 0.9em; /* Reduced font size */
-            padding: 3px 8px; /* Smaller padding for links */
-            transition: background-color 0.3s ease;
+            font-size: 1em;
+            padding: 5px 10px;
+            transition: color 0.3s ease;
         }
 
-        nav ul li a:hover {
-            background-color: #555;
+        nav ul li a:hover, 
+        nav ul li a.active {
             color: white;
-            border-radius: 3px;
+            border-bottom: 2px solid #00aaff;
         }
 
-        /* Make sure the navigation bar spans the full width */
-        nav {
-            width: 100%;
-            position: fixed; /* Keep the navbar at the top when scrolling */
-            top: 0;
-            left: 0;
-        }
-
-        /* Adjust the content to avoid being hidden under the nav bar */
+        /* Make sure content is not hidden under the nav bar */
         .container {
-            margin-top: 50px; /* Adjust this value based on the height of your navbar */
+            margin-top: 60px; /* Adjust to match nav height */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            nav ul li a {
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="architecture.html">Architecture Overview</a></li>
-            <li><a href="changelog.html">Changelog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="doc.html">Documentation</a></li>
-            <li><a href="faq.html">FAQ</a></li>
             <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a href="architecture.html">Architecture Overview</a></li>
+            <li><a href="doc.html">Documentation</a></li>
             <li><a href="setup.html">Setup Guide</a></li>
             <li><a href="tutorial.html">Tutorials</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -130,7 +139,7 @@
         <h2>Project Architecture</h2>
         <p><img src="./images/diagram.png" alt="Project Architecture"></p>
         <p><a href="architecture.html">View Full Architecture Overview</a></p>
-   
+
         <h2>Setup Guide</h2>
         <p>To set up the cluster, follow the <a href="./setup.html">Setup Guide</a>.</p>
 
