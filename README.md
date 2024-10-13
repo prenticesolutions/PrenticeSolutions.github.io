@@ -86,8 +86,8 @@ Here are some planned enhancements to further improve the system:
 
 If you have any questions or suggestions, feel free to contact me via:
 
-- Email: your.email@example.com
-- [GitHub Issues](https://github.com/yourusername/repo-name/issues)
+- Email: prenticesolutions@proton.me
+- [GitHub Issues](https://github.com/prenticesolutions/PrenticeSolutions.github.io/issues)
 
 ---
 
