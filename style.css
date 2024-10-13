@@ -11,13 +11,6 @@ body {
     background-color: #121212; /* Dark background for body */
     color: #e0e0e0; /* Light text color */
     margin: 20px;
-    a {
-        color: #00aaff; /* Bright blue for links */
-        text-decoration: none;
-    }
-    a:hover {
-        text-decoration: underline;
-    }
 }
 
 h1, h2 {
@@ -45,63 +38,39 @@ p {
     padding: 10px; /* Slight padding for better readability */
 }
 
-/* Ensure images are responsive */
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow for images */
+/* Logo Styles */
+.logo {
+    float: left;
+    color: #00aaff;
+    font-size: 1.5em;
+    margin-left: 20px;
 }
 
-/* Hamburger Button Styles */
-.hamburger {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 10px;
+.logo h1 {
+    font-size: 1.8em;
     margin: 0;
-    position: relative;
-    z-index: 1100; /* Ensure the hamburger is on top */
-    background: none;
-    border: none;
-}
-
-.hamburger span {
-    background-color: #00aaff;
-    height: 4px;
-    width: 30px;
-    margin: 4px 0;
-    transition: all 0.3s ease;
 }
 
 /* Navigation Bar Styles */
 nav {
     background-color: #333; /* Background for the whole nav bar */
     padding: 10px;
-    text-align: left;
+    text-align: right; /* Align the links to the right */
     position: fixed;
     top: 0;
-    width: auto; /* Adjust width to auto */
+    width: 100%;
     z-index: 1000;
 }
 
-/* Hide the menu by default */
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: none; /* Hide menu by default */
-    flex-direction: column; /* Stack links vertically */
-}
-
-nav ul.active {
-    display: flex; /* Show menu when active */
 }
 
 nav ul li {
+    display: inline-block;
     margin-right: 20px;
-    padding: 5px 0;
 }
 
 nav ul li:last-child {
@@ -114,82 +83,68 @@ nav ul li a {
     padding: 5px; /* Minimal padding to avoid button-like appearance */
     text-decoration: none;
     transition: color 0.3s ease;
-    background: none; /* Remove any background color */
-    border-radius: 0; /* Remove border radius */
-    box-shadow: none; /* Remove box-shadow */
 }
 
-/* Highlight the active link */
-nav ul li a.active {
+nav ul li a:hover, nav ul li a.active {
     color: white;
-    border-bottom: 2px solid #00aaff; /* Underline active link */
+    border-bottom: 2px solid #00aaff; /* Underline on hover or when active */
 }
 
-/* Show the hamburger menu on all screen sizes */
-.hamburger {
-    display: flex;
-}
-
-/* Desktop View: Hamburger is visible, but nav starts hidden */
-@media (min-width: 769px) {
+/* Mobile-friendly navigation: Stack links vertically on mobile */
+@media (max-width: 768px) {
     nav {
-        width: auto; /* Set width to auto to avoid long background */
+        text-align: left; /* Left align the nav on mobile */
     }
 
     nav ul {
-        display: none; /* Hide menu by default */
-        flex-direction: row;
+        display: none; /* Hide the links initially on mobile */
+        flex-direction: column; /* Stack links vertically on mobile */
+        background-color: #333; /* Consistent background for dropdown */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
     }
 
     nav ul.active {
         display: flex; /* Show menu when active */
     }
-}
-
-/* Mobile View: Menu is hidden initially, shown when active */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        display: none; /* Hide nav links initially */
-    }
-
-    nav ul.active {
-        display: flex; /* Show the menu when the hamburger is clicked */
-    }
 
     nav ul li {
-        margin-bottom: 10px;
+        text-align: center; /* Center links on mobile */
+        margin: 0; /* Remove margins for mobile */
+        padding: 10px;
     }
 
-    .container {
-        padding: 15px;
+    nav ul li a {
+        font-size: 1.2em;
+    }
+
+    /* Logo */
+    .logo {
+        text-align: center;
+        margin-bottom: 10px;
     }
 }
 
-/* Responsive design for mobile devices like iPhone, Pixel, Samsung */
-@media (max-width: 1024px) {
-    body {
-        margin: 10px; /* Reduce margin on mobile */
-    }
+/* Mobile toggle button */
+.mobile-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    padding: 10px;
+    color: #00aaff;
+    background-color: #333;
+    border: none;
+    text-align: center;
+    width: 100%;
+}
 
-    h1 {
-        font-size: 2rem; /* Adjust font size on smaller screens */
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    p {
-        font-size: 1.1em; /* Make text slightly bigger on mobile for readability */
-    }
-
-    .container {
-        width: 100%;
-        padding: 15px; /* More padding on smaller screens for better readability */
-    }
-
-    img {
-        margin-top: 15px; /* Reduce margin for images */
+/* Show mobile toggle button on smaller screens */
+@media (max-width: 768px) {
+    .mobile-toggle {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
     }
 }

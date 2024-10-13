@@ -5,29 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Kubernetes Cluster for Network Monitoring and Automation</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
-<nav>
-    <!-- Hamburger icon -->
-    <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    
-    <!-- Navigation links -->
-    <ul id="nav-links">
-        <li><a href="index.html">Home</a></li> <!-- Home link added -->
-        <li><a href="roadmap.html">Roadmap</a></li>
-        <li><a href="architecture.html">Architecture Overview</a></li>
-        <li><a href="doc.html">Documentation</a></li>
-        <li><a href="setup.html">Setup Guide</a></li>
-        <li><a href="tutorial.html">Tutorials</a></li>
-        <li><a href="changelog.html">Changelog</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
+
+<body>
+    <nav>
+        <!-- Logo -->
+        <div class="logo">
+            <h1>My Portfolio</h1>
+        </div>
+        
+        <!-- Mobile toggle button -->
+        <div class="mobile-toggle" onclick="toggleMenu()">Menu</div>
+
+        <!-- Navigation links -->
+        <ul id="nav-links">
+            <li><a href="index.html">Home</a></li> <!-- Home link added -->
+            <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a href="architecture.html">Architecture Overview</a></li>
+            <li><a href="doc.html">Documentation</a></li>
+            <li><a href="setup.html">Setup Guide</a></li>
+            <li><a href="tutorial.html">Tutorials</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
     <div class="container">
         <h1>Home Kubernetes Cluster for Network Monitoring and Automation</h1>
@@ -48,43 +50,19 @@
 
         <h2>Key Components</h2>
         <ul>
-            <li><strong>Monitoring Pod</strong>: <a href="/yml-pages/monitoring-pod.html">View Configuration</a><br>
-                This pod captures network traffic using <code>tcpdump</code>.
-            </li>
-            <li><strong>NGINX ConfigMap</strong>: <a href="/yml-pages/nginx-configmap.html">View Configuration</a><br>
-                Stores NGINX configurations for reverse proxying.
-            </li>
-            <li><strong>NGINX Reverse Proxy</strong>: <a href="/yml-pages/nginx-reverse-proxy.html">View Configuration</a><br>
-                Configures NGINX as a reverse proxy to secure remote access.
-            </li>
-            <li><strong>Persistent Volume</strong>: <a href="/yml-pages/persistent-volume.html">View Configuration</a><br>
-                Defines the storage used to persist network traffic captures.
-            </li>
-            <li><strong>Persistent Volume Claim</strong>: <a href="/yml-pages/persistent-volume-claim.html">View Configuration</a><br>
-                Claims the persistent volume for use by the traffic capture and backup pods.
-            </li>
-            <li><strong>PrenticeOps Kubernetes Dashboard</strong>: <a href="/yml-pages/kubernetes-dash.html">View Configuration</a><br>
-                The Kubernetes Dashboard for managing and monitoring the cluster directly.
-            </li>
-            <li><strong>Prometheus Config</strong>: <a href="/yml-pages/prometheus-config.html">View Configuration</a><br>
-                Configures Prometheus to scrape network data from the monitoring pods.
-            </li>
-            <li><strong>Prometheus Service</strong>: <a href="/yml-pages/prometheus-service.html">View Configuration</a><br>
-                Defines the Prometheus service within the Kubernetes cluster.
-            </li>
+            <li><strong>Monitoring Pod</strong>: <a href="/yml-pages/monitoring-pod.html">View Configuration</a></li>
+            <li><strong>NGINX ConfigMap</strong>: <a href="/yml-pages/nginx-configmap.html">View Configuration</a></li>
+            <li><strong>NGINX Reverse Proxy</strong>: <a href="/yml-pages/nginx-reverse-proxy.html">View Configuration</a></li>
+            <li><strong>Persistent Volume</strong>: <a href="/yml-pages/persistent-volume.html">View Configuration</a></li>
+            <li><strong>Persistent Volume Claim</strong>: <a href="/yml-pages/persistent-volume-claim.html">View Configuration</a></li>
+            <li><strong>PrenticeOps Kubernetes Dashboard</strong>: <a href="/yml-pages/kubernetes-dash.html">View Configuration</a></li>
+            <li><strong>Prometheus Config</strong>: <a href="/yml-pages/prometheus-config.html">View Configuration</a></li>
+            <li><strong>Prometheus Service</strong>: <a href="/yml-pages/prometheus-service.html">View Configuration</a></li>
             <li><strong>Grafana</strong>: Installed via Helm for visualizing metrics collected by Prometheus.</li>
-            <li><strong>Traffic Backup Pod</strong>: <a href="/yml-pages/traffic-backup.html">View Configuration</a><br>
-                Handles the backup of network traffic data captured by the monitoring pod.
-            </li>
-            <li><strong>Traffic Backup Service</strong>: <a href="/yml-pages/traffic-backup-service.html">View Configuration</a><br>
-                Exposes the traffic backup pod within the cluster.
-            </li>
-            <li><strong>Traffic Collector Pod</strong>: <a href="/yml-pages/traffic-collector.html">View Configuration</a><br>
-                Collects network traffic data for analysis and backup.
-            </li>
-            <li><strong>Traffic Collector Service</strong>: <a href="/yml-pages/traffic-collector-service.html">View Configuration</a><br>
-                Exposes the traffic collector pod within the cluster.
-            </li>
+            <li><strong>Traffic Backup Pod</strong>: <a href="/yml-pages/traffic-backup.html">View Configuration</a></li>
+            <li><strong>Traffic Backup Service</strong>: <a href="/yml-pages/traffic-backup-service.html">View Configuration</a></li>
+            <li><strong>Traffic Collector Pod</strong>: <a href="/yml-pages/traffic-collector.html">View Configuration</a></li>
+            <li><strong>Traffic Collector Service</strong>: <a href="/yml-pages/traffic-collector-service.html">View Configuration</a></li>
         </ul>
 
         <h2>Project Architecture</h2>
@@ -104,28 +82,25 @@
 
     <footer>
         <p>&copy; 2024 Prentice Solutions</p>
+    </footer>
 
-        <!--Script that selects active cless for page that it is on-->>
+    <!-- Script to highlight the active nav link -->
     <script>
-        // Get the current URL path
         const currentPath = window.location.pathname.split("/").pop();
-    
-        // Get all nav links
         const navLinks = document.querySelectorAll("nav ul li a");
-    
-        // Loop through each nav link and add 'active' class to the one that matches the current path
         navLinks.forEach(link => {
             if (link.getAttribute("href") === currentPath) {
                 link.classList.add("active");
             }
         });
     </script>
-        <!-- JavaScript for toggling the menu -->
-        <script>
-            function toggleMenu() {
-                const navLinks = document.getElementById('nav-links');
-                navLinks.classList.toggle('active');
-            }
-        </script>
+
+    <!-- JavaScript for toggling the menu -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
