@@ -119,3 +119,51 @@ h2:after {
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Adding shadow for canvas */
 }
+
+/* Navigation Bar Styles */
+nav {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure navbar is always on top */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #00aaff;
+    font-size: 1em;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: white;
+    border-bottom: 2px solid #00aaff;
+}
+
+/* Responsive Design for Nav */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    nav ul li a {
+        font-size: 1.2em;
+    }
+}
