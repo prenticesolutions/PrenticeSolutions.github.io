@@ -34,7 +34,7 @@ p {
 
 /* General link styles (non-navigation links) */
 a {
-    color: #00aaff; /* Bright blue for links */
+    color: white; /* Bright blue for links */
 }
 
 /* Navigation Bar Styles */
@@ -76,7 +76,7 @@ nav ul li a {
 
 /* Hover effect for navbar links */
 nav ul li a:hover {
-    color: darkblue; /* Change color on hover */
+    color: white; /* Change color on hover */
     text-decoration: underline; /* Underline on hover */
 }
 
