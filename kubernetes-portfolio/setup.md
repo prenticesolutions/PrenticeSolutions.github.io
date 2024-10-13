@@ -5,7 +5,7 @@ title: "Setup"
 
 
 
-Setup Guide: Home Kubernetes Cluster for Network Monitoring and Automation
+Setup Guide:
 ==========================================================================
 
 Step 1: Clone the Repository
@@ -24,7 +24,7 @@ To clone the repository using Git from the command line, follow these steps:
     ```
 3. Navigate to the cloned directory:
     ```bash
-    cd PrenticeSolutions.github.io/configs
+    cd PrenticeSolutions.github.io/configs 
     ```
 
 ### Using VS Code:
