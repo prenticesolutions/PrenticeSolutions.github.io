@@ -1,183 +1,165 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Setup Guide: Home Kubernetes Cluster for Network Monitoring and Automation</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to your stylesheet -->
+---
+layout: default
+title: "Setup"
+---
+
+
+
+Setup Guide: Home Kubernetes Cluster for Network Monitoring and Automation
+==========================================================================
+
+Step 1: Clone the Repository
+----------------------------
+
+Before you begin, clone the repository containing all the configuration files to your local machine. You can do this via Git, GitHub Desktop, or VS Code's integration.
+
+### Using GitHub Desktop:
+
+1.  Open **GitHub Desktop** and click on **Clone a repository**.
+2.  Choose the repository and select the directory to save it in.
+
+### Using VS Code:
+
+1.  In VS Code, press `Ctrl+Shift+P` to open the command palette.
+2.  Type **Git: Clone** and select **Clone Repository**.
+3.  Paste the URL of your GitHub repository and choose the directory to save the files.
+
+Once the repository is cloned, navigate to the working directory where you’ll be deploying your Kubernetes configuration files.
+
+* * *
+
+Step 2: Docker Desktop Configuration
+------------------------------------
+
+### Enable Kubernetes:
+
+1.  Open **Docker Desktop**, go to **Settings** → **Kubernetes**.
+2.  Toggle the switch to **Enable Kubernetes**.
+
+### Resource Saver:
+
+*   Under **Resources** and **Advanced**, set the **Resource Saver** to 5 minutes (optional).
+
+### Disk Image Location:
+
+*   Leave the **default disk image location**.
+
+### Network Settings:
+
+*   The project uses the **default subnet** (this can be changed later if needed).
+*   **Enable Host Networking**: Under **Network**, ensure that **Enable host networking** is toggled on.
+
+### WSL 2 Integration:
+
+1.  Go to the **WSL** tab in settings.
+2.  Toggle on **Enable integration with my default WSL distro** and select **Debian** as the distro.
+
+### Other Settings:
+
+*   Everything else remains at the default settings for this project.
+
+* * *
+
+Step 3: Setting Up the Kubernetes Cluster
+-----------------------------------------
+
+Since this is an educational project, Docker Desktop will automatically create the default namespaces required to run the cluster. You don’t need to manually manage namespaces for this setup.
+
+* * *
+
+Step 4: Installing Helm and Grafana
+-----------------------------------
+
+### Install Helm:
+
+Run the following command to install Helm:
+
+    curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+
+### Add Helm Repositories:
+
+1.  Add the stable Helm chart repository:
     
-</head>
-
-
-<body>
-        <!-- Navigation bar added here -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li> <!-- Home link added -->
-                <li><a href="roadmap.html">Roadmap</a></li>
-                <li><a href="architecture.html">Architecture Overview</a></li>
-                <li><a href="doc.html">Documentation</a></li>
-                <li><a href="setup.html">Setup Guide</a></li>
-                <li><a href="tutorial.html">Tutorials</a></li>
-                <li><a href="changelog.html">Changelog</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    <div class="container">
-        <h1>Setup Guide: Home Kubernetes Cluster for Network Monitoring and Automation</h1>
-
-        <h2>Step 1: Clone the Repository</h2>
-        <p>Before you begin, clone the repository containing all the configuration files to your local machine. You can do this via Git, GitHub Desktop, or VS Code's integration.</p>
-
-        <h3>Using GitHub Desktop:</h3>
-        <ol>
-            <li>Open <strong>GitHub Desktop</strong> and click on <strong>Clone a repository</strong>.</li>
-            <li>Choose the repository and select the directory to save it in.</li>
-        </ol>
-
-        <h3>Using VS Code:</h3>
-        <ol>
-            <li>In VS Code, press <code>Ctrl+Shift+P</code> to open the command palette.</li>
-            <li>Type <strong>Git: Clone</strong> and select <strong>Clone Repository</strong>.</li>
-            <li>Paste the URL of your GitHub repository and choose the directory to save the files.</li>
-        </ol>
-
-        <p>Once the repository is cloned, navigate to the working directory where you’ll be deploying your Kubernetes configuration files.</p>
-
-        <hr>
-
-        <h2>Step 2: Docker Desktop Configuration</h2>
-
-        <h3>Enable Kubernetes:</h3>
-        <ol>
-            <li>Open <strong>Docker Desktop</strong>, go to <strong>Settings</strong> → <strong>Kubernetes</strong>.</li>
-            <li>Toggle the switch to <strong>Enable Kubernetes</strong>.</li>
-        </ol>
-
-        <h3>Resource Saver:</h3>
-        <ul>
-            <li>Under <strong>Resources</strong> and <strong>Advanced</strong>, set the <strong>Resource Saver</strong> to 5 minutes (optional).</li>
-        </ul>
-
-        <h3>Disk Image Location:</h3>
-        <ul>
-            <li>Leave the <strong>default disk image location</strong>.</li>
-        </ul>
-
-        <h3>Network Settings:</h3>
-        <ul>
-            <li>The project uses the <strong>default subnet</strong> (this can be changed later if needed).</li>
-            <li><strong>Enable Host Networking</strong>: Under <strong>Network</strong>, ensure that <strong>Enable host networking</strong> is toggled on.</li>
-        </ul>
-
-        <h3>WSL 2 Integration:</h3>
-        <ol>
-            <li>Go to the <strong>WSL</strong> tab in settings.</li>
-            <li>Toggle on <strong>Enable integration with my default WSL distro</strong> and select <strong>Debian</strong> as the distro.</li>
-        </ol>
-
-        <h3>Other Settings:</h3>
-        <ul>
-            <li>Everything else remains at the default settings for this project.</li>
-        </ul>
-
-        <hr>
-
-        <h2>Step 3: Setting Up the Kubernetes Cluster</h2>
-        <p>Since this is an educational project, Docker Desktop will automatically create the default namespaces required to run the cluster. You don’t need to manually manage namespaces for this setup.</p>
-
-        <hr>
-
-        <h2>Step 4: Installing Helm and Grafana</h2>
-
-        <h3>Install Helm:</h3>
-        <p>Run the following command to install Helm:</p>
-        <pre><code>curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash</code></pre>
-
-        <h3>Add Helm Repositories:</h3>
-        <ol>
-            <li>Add the stable Helm chart repository:
-                <pre><code>helm repo add stable https://charts.helm.sh/stable</code></pre>
-            </li>
-            <li>Add the Grafana Helm chart repository:
-                <pre><code>helm repo add grafana https://grafana.github.io/helm-charts</code></pre>
-            </li>
-        </ol>
-
-        <h3>Install Grafana:</h3>
-        <ol>
-            <li>Install Grafana using Helm and access the dashboard:
-                <pre><code>helm install grafana grafana/grafana kubectl port-forward svc/grafana 3000:80</code></pre>
-            </li>
-            <li>Follow Grafana’s official documentation for setting up user credentials and further customization.</li>
-        </ol>
-
-        <hr>
-
-        <h2>Step 5: Deploying the Pods</h2>
-        <p>Once Grafana is set up, it's time to deploy the Kubernetes pods. Each configuration file is applied using <code>kubectl apply -f</code> in the following order:</p>
-
-        <h3>Deploy the NGINX ConfigMap and NGINX Pod:</h3>
-        <pre><code>kubectl apply -f nginx-configmap.yml kubectl apply -f nginx-reverse-proxy.yml</code></pre>
-
-        <h3>Deploy the Monitoring (Prometheus) Pod:</h3>
-        <pre><code>kubectl apply -f monitoring-pod.yml</code></pre>
-
-        <h3>Deploy the Kubernetes Dashboard Pod:</h3>
-        <pre><code>kubectl apply -f kubernetes-dash.yml</code></pre>
-
-        <hr>
-
-        <h2>Step 6: Accessing the Kubernetes Dashboard</h2>
-        <p>To access the Kubernetes Dashboard, you need to run the following command to proxy requests from your local machine:</p>
-        <pre><code>kubectl proxy</code></pre>
-
-        <p>Once the proxy is running, open a browser and go to the following URL:</p>
-        <pre><code>http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/</code></pre>
-
-        <p>This will open the Kubernetes Dashboard, where you can monitor and manage your cluster.</p>
-
-        <hr>
-
-        <h2>Step 7: Deploying the Persistent Volume and Services</h2>
-
-        <h3>Deploy the Persistent Volume and Claim:</h3>
-        <pre><code>kubectl apply -f persistent-volume.yml kubectl apply -f persistent-volume-claim.yml</code></pre>
-
-        <h3>Deploy the Traffic Backup and Collector Services:</h3>
-        <pre><code>kubectl apply -f traffic-backup-service.yml kubectl apply -f traffic-collector-service.yml</code></pre>
-
-        <hr>
-
-        <h2>Step 8: Deploying the Traffic Pods</h2>
-
-        <h3>Deploy the Traffic Backup Pod:</h3>
-        <pre><code>kubectl apply -f traffic-backup.yml</code></pre>
-
-        <h3>Deploy the Traffic Collector Pod:</h3>
-        <pre><code>kubectl apply -f traffic-collector.yml</code></pre>
-
-        <hr>
-
-        <h2>Monitoring and Visualizing Metrics</h2>
-        <p>Once the Prometheus and Grafana services are running, you can monitor network metrics by accessing Grafana at <code>localhost:3000</code>. Follow Grafana's official documentation to set up dashboards, add data sources, and visualize real-time network traffic.</p>
-
-    </div>
-     <!--Script that selects active cless for page that it is on-->>
-     <script>
-        // Get the current URL path
-        const currentPath = window.location.pathname.split("/").pop();
+        helm repo add stable https://charts.helm.sh/stable
     
-        // Get all nav links
-        const navLinks = document.querySelectorAll("nav ul li a");
+2.  Add the Grafana Helm chart repository:
     
-        // Loop through each nav link and add 'active' class to the one that matches the current path
-        navLinks.forEach(link => {
-            if (link.getAttribute("href") === currentPath) {
-                link.classList.add("active");
-            }
-        });
-    </script>
-</body>
-</html>
+        helm repo add grafana https://grafana.github.io/helm-charts
+    
+
+### Install Grafana:
+
+1.  Install Grafana using Helm and access the dashboard:
+    
+        helm install grafana grafana/grafana kubectl port-forward svc/grafana 3000:80
+    
+2.  Follow Grafana’s official documentation for setting up user credentials and further customization.
+
+* * *
+
+Step 5: Deploying the Pods
+--------------------------
+
+Once Grafana is set up, it's time to deploy the Kubernetes pods. Each configuration file is applied using `kubectl apply -f` in the following order:
+
+### Deploy the NGINX ConfigMap and NGINX Pod:
+
+    kubectl apply -f nginx-configmap.yml kubectl apply -f nginx-reverse-proxy.yml
+
+### Deploy the Monitoring (Prometheus) Pod:
+
+    kubectl apply -f monitoring-pod.yml
+
+### Deploy the Kubernetes Dashboard Pod:
+
+    kubectl apply -f kubernetes-dash.yml
+
+* * *
+
+Step 6: Accessing the Kubernetes Dashboard
+------------------------------------------
+
+To access the Kubernetes Dashboard, you need to run the following command to proxy requests from your local machine:
+
+    kubectl proxy
+
+Once the proxy is running, open a browser and go to the following URL:
+
+    http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+
+This will open the Kubernetes Dashboard, where you can monitor and manage your cluster.
+
+* * *
+
+Step 7: Deploying the Persistent Volume and Services
+----------------------------------------------------
+
+### Deploy the Persistent Volume and Claim:
+
+    kubectl apply -f persistent-volume.yml kubectl apply -f persistent-volume-claim.yml
+
+### Deploy the Traffic Backup and Collector Services:
+
+    kubectl apply -f traffic-backup-service.yml kubectl apply -f traffic-collector-service.yml
+
+* * *
+
+Step 8: Deploying the Traffic Pods
+----------------------------------
+
+### Deploy the Traffic Backup Pod:
+
+    kubectl apply -f traffic-backup.yml
+
+### Deploy the Traffic Collector Pod:
+
+    kubectl apply -f traffic-collector.yml
+
+* * *
+
+Monitoring and Visualizing Metrics
+----------------------------------
+
+Once the Prometheus and Grafana services are running, you can monitor network metrics by accessing Grafana at `localhost:3000`. Follow Grafana's official documentation to set up dashboards, add data sources, and visualize real-time network traffic.
+
+\> // Get the current URL path const currentPath = window.location.pathname.split("/").pop(); // Get all nav links const navLinks = document.querySelectorAll("nav ul li a"); // Loop through each nav link and add 'active' class to the one that matches the current path navLinks.forEach(link => { if (link.getAttribute("href") === currentPath) { link.classList.add("active"); } });

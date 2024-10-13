@@ -1,125 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutorials - Kubernetes Cluster Project</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to your stylesheet -->
-</head>
-<body>
-    <!-- Navigation bar added here -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li> <!-- Home link added -->
-            <li><a href="roadmap.html">Roadmap</a></li>
-            <li><a href="architecture.html">Architecture Overview</a></li>
-            <li><a href="doc.html">Documentation</a></li>
-            <li><a href="setup.html">Setup Guide</a></li>
-            <li><a href="tutorial.html">Tutorials</a></li>
-            <li><a href="changelog.html">Changelog</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-    </nav>
+---
+layout: default
+title: "Tutorials"
+---
+How-To Guides and Tutorials
+===========================
 
-<body>
-    <div class="container">
-        <h1>How-To Guides and Tutorials</h1>
-        <p>This page provides step-by-step guides on essential tasks for managing and using the Kubernetes network monitoring cluster.</p>
+This page provides step-by-step guides on essential tasks for managing and using the Kubernetes network monitoring cluster.
 
-        <h2>1. Deploying New Pods</h2>
-        <p>Follow these steps to deploy a new pod in your Kubernetes cluster:</p>
-        <ol>
-            <li>Create your pod configuration file (YAML format).</li>
-            <li>Use the <code>kubectl apply</code> command to deploy the pod:</li>
-            <pre><code>kubectl apply -f <your-pod-config.yml></code></pre>
-            <li>Verify that the pod is running by checking the pod status:</li>
-            <pre><code>kubectl get pods</code></pre>
-            <li>If the pod fails to start, you can check the logs for more information (see section on getting logs).</li>
-        </ol>
+1\. Deploying New Pods
+----------------------
 
-        <h2>2. Running Port Forward for Grafana and Kubernetes Dashboard</h2>
-        <p>To access Grafana and the Kubernetes Dashboard, you'll need to set up port forwarding:</p>
+Follow these steps to deploy a new pod in your Kubernetes cluster:
 
-        <h3>Port Forward for Grafana:</h3>
-        <ol>
-            <li>Run the following command to forward the Grafana service to your localhost:</li>
-            <pre><code>kubectl port-forward svc/grafana 3000:80</code></pre>
-            <li>Open your browser and go to <code>http://localhost:3000</code> to access the Grafana dashboard.</li>
-        </ol>
+1.  Create your pod configuration file (YAML format).
+2.  Use the `kubectl apply` command to deploy the pod:
 
-        <h3>Port Forward for Kubernetes Dashboard:</h3>
-        <ol>
-            <li>Run the following command to proxy the Kubernetes Dashboard to your localhost:</li>
-            <pre><code>kubectl proxy</code></pre>
-            <li>Open your browser and go to the following URL:</li>
-            <pre><code>http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/</code></pre>
-            <li>For more information on setting up the Kubernetes Dashboard, visit the official documentation: 
-                <a href="https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/">Kubernetes Dashboard Documentation</a>.
-            </li>
-        </ol>
+    kubectl apply -f 
 
-        <h2>3. Getting Logs and Pods</h2>
-        <p>It's important to monitor pod activity and retrieve logs when debugging. Here are the key commands:</p>
+4.  Verify that the pod is running by checking the pod status:
 
-        <h3>Get All Running Pods:</h3>
-        <p>To view all running pods in the cluster:</p>
-        <pre><code>kubectl get pods</code></pre>
+    kubectl get pods
 
-        <h3>Check Pod Logs:</h3>
-        <p>To view logs for a specific pod, use the following command:</p>
-        <pre><code>kubectl logs <pod-name></code></pre>
+6.  If the pod fails to start, you can check the logs for more information (see section on getting logs).
 
-        <h2>4. Setting Up the NGINX Reverse Proxy</h2>
-        <p>Setting up the NGINX reverse proxy allows secure access to the Grafana and Kubernetes dashboards.</p>
+2\. Running Port Forward for Grafana and Kubernetes Dashboard
+-------------------------------------------------------------
 
-        <h3>Within the Cluster:</h3>
-        <ol>
-            <li>Create the NGINX ConfigMap:</li>
-            <pre><code>kubectl apply -f nginx-configmap.yml</code></pre>
-            <li>Deploy the NGINX pod:</li>
-            <pre><code>kubectl apply -f nginx-reverse-proxy.yml</code></pre>
-            <li>Verify the NGINX pod is running:</li>
-            <pre><code>kubectl get pods</code></pre>
-        </ol>
+To access Grafana and the Kubernetes Dashboard, you'll need to set up port forwarding:
 
-        <h3>From Another Machine (External Access):</h3>
-        <ol>
-            <li>Install NGINX on the external machine:</li>
-            <pre><code>sudo apt install nginx</code></pre>
-            <li>Configure NGINX to forward requests to the Kubernetes cluster. Edit the <code>/etc/nginx/nginx.conf</code> file to include:</li>
-            <pre><code>
-server {
-    listen 80;
-    location /grafana/ {
-        proxy_pass http://<cluster-ip>:3000;
-    }
-    location /kubernetes-dashboard/ {
-        proxy_pass http://<cluster-ip>:8001;
-    }
-}
-            </code></pre>
-            <li>Restart NGINX to apply the changes:</li>
-            <pre><code>sudo systemctl restart nginx</code></pre>
-            <li>Now, when users go to <code>http://<external-machine-ip>/grafana/</code>, they will be securely forwarded to the Grafana dashboard.</li>
-        </ol>
+### Port Forward for Grafana:
 
-    </div>
-     <!--Script that selects active cless for page that it is on-->>
-     <script>
-        // Get the current URL path
-        const currentPath = window.location.pathname.split("/").pop();
+1.  Run the following command to forward the Grafana service to your localhost:
+
+    kubectl port-forward svc/grafana 3000:80
+
+3.  Open your browser and go to `http://localhost:3000` to access the Grafana dashboard.
+
+### Port Forward for Kubernetes Dashboard:
+
+1.  Run the following command to proxy the Kubernetes Dashboard to your localhost:
+
+    kubectl proxy
+
+3.  Open your browser and go to the following URL:
+
+    http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+
+5.  For more information on setting up the Kubernetes Dashboard, visit the official documentation: [Kubernetes Dashboard Documentation](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/).
+
+3\. Getting Logs and Pods
+-------------------------
+
+It's important to monitor pod activity and retrieve logs when debugging. Here are the key commands:
+
+### Get All Running Pods:
+
+To view all running pods in the cluster:
+
+    kubectl get pods
+
+### Check Pod Logs:
+
+To view logs for a specific pod, use the following command:
+
+    kubectl logs 
+
+4\. Setting Up the NGINX Reverse Proxy
+--------------------------------------
+
+Setting up the NGINX reverse proxy allows secure access to the Grafana and Kubernetes dashboards.
+
+### Within the Cluster:
+
+1.  Create the NGINX ConfigMap:
+
+    kubectl apply -f nginx-configmap.yml
+
+3.  Deploy the NGINX pod:
+
+    kubectl apply -f nginx-reverse-proxy.yml
+
+5.  Verify the NGINX pod is running:
+
+    kubectl get pods
+
+### From Another Machine (External Access):
+
+1.  Install NGINX on the external machine:
+
+    sudo apt install nginx
+
+3.  Configure NGINX to forward requests to the Kubernetes cluster. Edit the `/etc/nginx/nginx.conf` file to include:
+
     
-        // Get all nav links
-        const navLinks = document.querySelectorAll("nav ul li a");
-    
-        // Loop through each nav link and add 'active' class to the one that matches the current path
-        navLinks.forEach(link => {
-            if (link.getAttribute("href") === currentPath) {
-                link.classList.add("active");
-            }
-        });
-    </script>
-</body>
-</html>
+    server {
+        listen 80;
+        location /grafana/ {
+            proxy_pass http://:3000;
+        }
+        location /kubernetes-dashboard/ {
+            proxy_pass http://:8001;
+        }
+    }
+                
+
+5.  Restart NGINX to apply the changes:
+
+    sudo systemctl restart nginx
+
+7.  Now, when users go to `http:///grafana/`, they will be securely forwarded to the Grafana dashboard.
+
+\> // Get the current URL path const currentPath = window.location.pathname.split("/").pop(); // Get all nav links const navLinks = document.querySelectorAll("nav ul li a"); // Loop through each nav link and add 'active' class to the one that matches the current path navLinks.forEach(link => { if (link.getAttribute("href") === currentPath) { link.classList.add("active"); } });

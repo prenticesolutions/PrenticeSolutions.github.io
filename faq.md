@@ -1,95 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Kubernetes Cluster Project</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to your stylesheet -->
-    
-  </head>
+---
+layout: default
+title: "FAQ"
+---
 
-<body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li> <!-- Home link added -->
-            <li><a href="roadmap.html">Roadmap</a></li>
-            <li><a href="architecture.html">Architecture Overview</a></li>
-            <li><a href="doc.html">Documentation</a></li>
-            <li><a href="setup.html">Setup Guide</a></li>
-            <li><a href="tutorial.html">Tutorials</a></li>
-            <li><a href="changelog.html">Changelog</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-    <div class="container">
-        <h1>FAQ - Kubernetes Cluster Project</h1>
-        <p>Below are answers to some frequently asked questions about setting up and using the Kubernetes-based network monitoring cluster.</p>
+FAQ - Kubernetes Cluster Project
+================================
 
-        <h2>General Questions</h2>
-        <h3>Q: What is the purpose of this Kubernetes project?</h3>
-        <p>A: This project sets up a Kubernetes cluster for monitoring and backing up network traffic using Prometheus, Grafana, and NGINX reverse proxy for secure external access.</p>
+Below are answers to some frequently asked questions about setting up and using the Kubernetes-based network monitoring cluster.
 
-        <h3>Q: Can I use this project on a Linux system?</h3>
-        <p>A: Yes, the project was developed on Windows 11 Pro with Docker Desktop's Kubernetes engine, but it can be replicated on a complete Linux environment using Kubernetes and Docker directly.</p>
+General Questions
+-----------------
 
-        <h2>Setup and Installation</h2>
-        <h3>Q: How do I clone the repository?</h3>
-        <p>A: You can clone the repository using Git, GitHub Desktop, or VS Code integration. Full instructions can be found in the <a href="setup.html">Setup Guide</a>.</p>
+### Q: What is the purpose of this Kubernetes project?
 
-        <h3>Q: How do I access the Kubernetes Dashboard?</h3>
-        <p>A: To access the Kubernetes Dashboard, use the following command:</p>
-        <pre><code>kubectl proxy</code></pre>
-        <p>Then open your browser and go to:</p>
-        <pre><code>http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/</code></pre>
+A: This project sets up a Kubernetes cluster for monitoring and backing up network traffic using Prometheus, Grafana, and NGINX reverse proxy for secure external access.
 
-        <h3>Q: Why is my Grafana dashboard not loading?</h3>
-        <p>A: Ensure that you have port-forwarding set up for Grafana using the following command:</p>
-        <pre><code>kubectl port-forward svc/grafana 3000:80</code></pre>
-        <p>If it still doesn’t load, verify that the Grafana pod is running and the port-forward is active.</p>
+### Q: Can I use this project on a Linux system?
 
-        <h2>Monitoring and Metrics</h2>
-        <h3>Q: How do I monitor network traffic?</h3>
-        <p>A: Network traffic is captured by the <code>traffic-collector</code> pod using <code>tcpdump</code>. Prometheus scrapes metrics from the collector and backup pods, and Grafana visualizes these metrics.</p>
+A: Yes, the project was developed on Windows 11 Pro with Docker Desktop's Kubernetes engine, but it can be replicated on a complete Linux environment using Kubernetes and Docker directly.
 
-        <h3>Q: How do I add new monitoring targets to Prometheus?</h3>
-        <p>A: To add new targets to Prometheus, update the <code>prometheus-config.yml</code> file by adding a new <code>job_name</code> under <code>scrape_configs</code> with the new target's address.</p>
+Setup and Installation
+----------------------
 
-        <h2>Troubleshooting</h2>
-        <h3>Q: What should I do if a pod fails to start?</h3>
-        <p>A: Check the logs of the failed pod using the following command:</p>
-        <pre><code>kubectl logs <pod-name></code></pre>
-        <p>This will provide insights into why the pod isn’t starting. It could be due to incorrect configurations, missing images, or insufficient resources.</p>
+### Q: How do I clone the repository?
 
-        <h3>Q: What happens if the Persistent Volume is full?</h3>
-        <p>A: If the persistent volume becomes full, you may need to either expand the volume or rotate the data by backing up older data to another storage and freeing up space. You can also increase the <code>capacity</code> in the persistent volume configuration.</p>
+A: You can clone the repository using Git, GitHub Desktop, or VS Code integration. Full instructions can be found in the [Setup Guide](setup.html).
 
-        <h3>Q: How do I restart a service or pod?</h3>
-        <p>A: To restart a pod, you can delete it, and Kubernetes will automatically restart it based on the deployment settings. Use this command to delete a pod:</p>
-        <pre><code>kubectl delete pod <pod-name></code></pre>
+### Q: How do I access the Kubernetes Dashboard?
 
-        <h2>Future Enhancements</h2>
-        <h3>Q: What new features are planned for this project?</h3>
-        <p>A: Future enhancements include integrating Jenkins for automated CI/CD pipeline, adding more monitoring metrics to Prometheus, and scaling the cluster based on network traffic.</p>
+A: To access the Kubernetes Dashboard, use the following command:
 
-        <h3>Q: How can I contribute to this project?</h3>
-        <p>A: You can contribute by forking the repository, making your changes, and submitting a pull request on GitHub. Be sure to check the <a href="changelog.html">Changelog</a> for recent updates and the <a href="roadmap.html">Roadmap</a> page for upcoming features. Also check my <a href="contact.html">Contact</a> page to get in touch with me!</p>
+    kubectl proxy
 
-    </div>
-     <!--Script that selects active cless for page that it is on-->>
-     <script>
-        // Get the current URL path
-        const currentPath = window.location.pathname.split("/").pop();
-    
-        // Get all nav links
-        const navLinks = document.querySelectorAll("nav ul li a");
-    
-        // Loop through each nav link and add 'active' class to the one that matches the current path
-        navLinks.forEach(link => {
-            if (link.getAttribute("href") === currentPath) {
-                link.classList.add("active");
-            }
-        });
-    </script>
-</body>
-</html>
+Then open your browser and go to:
+
+    http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+
+### Q: Why is my Grafana dashboard not loading?
+
+A: Ensure that you have port-forwarding set up for Grafana using the following command:
+
+    kubectl port-forward svc/grafana 3000:80
+
+If it still doesn’t load, verify that the Grafana pod is running and the port-forward is active.
+
+Monitoring and Metrics
+----------------------
+
+### Q: How do I monitor network traffic?
+
+A: Network traffic is captured by the `traffic-collector` pod using `tcpdump`. Prometheus scrapes metrics from the collector and backup pods, and Grafana visualizes these metrics.
+
+### Q: How do I add new monitoring targets to Prometheus?
+
+A: To add new targets to Prometheus, update the `prometheus-config.yml` file by adding a new `job_name` under `scrape_configs` with the new target's address.
+
+Troubleshooting
+---------------
+
+### Q: What should I do if a pod fails to start?
+
+A: Check the logs of the failed pod using the following command:
+
+    kubectl logs 
+
+This will provide insights into why the pod isn’t starting. It could be due to incorrect configurations, missing images, or insufficient resources.
+
+### Q: What happens if the Persistent Volume is full?
+
+A: If the persistent volume becomes full, you may need to either expand the volume or rotate the data by backing up older data to another storage and freeing up space. You can also increase the `capacity` in the persistent volume configuration.
+
+### Q: How do I restart a service or pod?
+
+A: To restart a pod, you can delete it, and Kubernetes will automatically restart it based on the deployment settings. Use this command to delete a pod:
+
+    kubectl delete pod 
+
+Future Enhancements
+-------------------
+
+### Q: What new features are planned for this project?
+
+A: Future enhancements include integrating Jenkins for automated CI/CD pipeline, adding more monitoring metrics to Prometheus, and scaling the cluster based on network traffic.
+
+### Q: How can I contribute to this project?
+
+A: You can contribute by forking the repository, making your changes, and submitting a pull request on GitHub. Be sure to check the [Changelog](changelog.html) for recent updates and the [Roadmap](roadmap.html) page for upcoming features. Also check my [Contact](contact.html) page to get in touch with me!
+
+\> // Get the current URL path const currentPath = window.location.pathname.split("/").pop(); // Get all nav links const navLinks = document.querySelectorAll("nav ul li a"); // Loop through each nav link and add 'active' class to the one that matches the current path navLinks.forEach(link => { if (link.getAttribute("href") === currentPath) { link.classList.add("active"); } });
