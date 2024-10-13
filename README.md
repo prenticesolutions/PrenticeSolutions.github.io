@@ -31,7 +31,7 @@ This repository contains configurations and documentation for deploying a Kubern
 
 ## Key Components
 
-- **Monitoring Pod**: Captures network traffic using `tcpdump`.
+- **Traffic Collector Pod**: Captures network traffic using `tcpdump`.
 - **NGINX Reverse Proxy**: Provides secure access to services.
 - **Prometheus**: Collects and scrapes data from various components.
 - **Grafana**: Visualizes the network traffic and monitoring data.
