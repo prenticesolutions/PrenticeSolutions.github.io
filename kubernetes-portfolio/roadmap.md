@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Roadmap "
+title: "Roadmap"
 ---
 
 FAQ - Kubernetes Cluster Project
