@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Contact - Kubernetes Cluster Project"
+title: "Contact"
 ---
 
 # Contact Information
