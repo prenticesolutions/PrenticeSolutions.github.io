@@ -3,22 +3,6 @@ layout: default
 title: "Roadmap"
 ---
 
-FAQ - Kubernetes Cluster Project
-================================
-
-Below are answers to some frequently asked questions about setting up and using the Kubernetes-based network monitoring cluster.
-
-General Questions
------------------
-
-### Q: What is the purpose of this Kubernetes project?
-
-A: This project sets up a Kubernetes cluster for monitoring and backing up network traffic using Prometheus, Grafana, and NGINX reverse proxy for secure external access.
-
-### Q: Can I use this project on a Linux system?
-
-A: Yes, the project was developed on Windows 11 Pro with Docker Desktop's Kubernetes engine, but it can be replicated on a complete Linux environment using Kubernetes and Docker directly.
-
 Setup and Installation
 ----------------------
 

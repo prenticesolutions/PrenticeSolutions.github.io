@@ -157,7 +157,55 @@ Step 8: Deploying the Traffic Pods
 
 * * *
 
+Step 9: Setting Up the NGINX Reverse Proxy
+--------------------------------------
+
+Setting up the NGINX reverse proxy allows secure access to the Grafana and Kubernetes dashboards.
+
+### Within the Cluster:
+
+1.  Create the NGINX ConfigMap:
+
+    kubectl apply -f nginx-configmap.yml
+
+3.  Deploy the NGINX pod:
+
+    kubectl apply -f nginx-reverse-proxy.yml
+
+5.  Verify the NGINX pod is running:
+
+    kubectl get pods
+
+### From Another Machine (External Access):
+
+1.  Install NGINX on the external machine:
+
+    sudo apt install nginx
+
+3.  Configure NGINX to forward requests to the Kubernetes cluster. Edit the `/etc/nginx/nginx.conf` file to include:
+
+    
+    server {
+        listen 80;
+        location /grafana/ {
+            proxy_pass http://:3000;
+        }
+        location /kubernetes-dashboard/ {
+            proxy_pass http://:8001;
+        }
+    }
+                
+
+5.  Restart NGINX to apply the changes:
+
+    sudo systemctl restart nginx
+
+7.  Now, when users go to `http:///grafana/`, they will be securely forwarded to the Grafana dashboard.
+
+***
+
 Monitoring and Visualizing Metrics
 ----------------------------------
 
 Once the Prometheus and Grafana services are running, you can monitor network metrics by accessing Grafana at `localhost:3000`. Follow Grafana's official documentation to set up dashboards, add data sources, and visualize real-time network traffic.
+
